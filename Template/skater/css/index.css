@@ -10,3 +10,111 @@
 .block__35630 > h3 {
     text-align : center;
 }
+ /*! CSS Used from: Embedded */
+div,h3,p{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.ladi-section{margin:0 auto;position:relative;}
+.ladi-section .ladi-section-background{position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;overflow:hidden;}
+.ladi-container{position:relative;margin:0 auto;height:100%;}
+.ladi-element{position:absolute;}
+.ladi-box{position:absolute;width:100%;height:100%;overflow:hidden;}
+.ladi-group{position:absolute;width:100%;height:100%;}
+.ladi-image{position:absolute;width:100%;height:100%;overflow:hidden;pointer-events:none;}
+.ladi-image .ladi-image-background{background-repeat:no-repeat;background-position:left top;background-size:cover;background-attachment:scroll;background-origin:content-box;position:absolute;margin:0 auto;width:100%;height:100%;pointer-events:none;}
+.ladi-headline{width:100%;display:inline-block;background-size:cover;background-position:center center;}
+.ladi-paragraph{width:100%;display:inline-block;}
+/*! CSS Used from: Embedded */
+@media (min-width: 768px){
+.ladi-section .ladi-container{width:1200px;}
+}
+@media (max-width: 767px){
+.ladi-section .ladi-container{width:420px;}
+}
+/*! CSS Used from: Embedded */
+@media (min-width: 768px){
+#SECTION64{height:577px;}
+#SECTION64 > .ladi-section-background{background:#434343;background:-webkit-radial-gradient(circle, #434343, #000000);background:radial-gradient(circle, #434343, #000000);}
+#HEADLINE65{width:841px;top:46px;left:179.5px;}
+#HEADLINE65 > .ladi-headline{color:rgb(238, 202, 102);font-size:25px;font-weight:bold;text-align:center;line-height:1.6;}
+#PARAGRAPH66{width:830px;top:94px;left:185px;}
+#PARAGRAPH66 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:center;line-height:1.6;}
+#PARAGRAPH67{width:487px;top:194px;left:353.5px;}
+#PARAGRAPH67 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:22px;font-weight:bold;text-align:center;line-height:1.6;}
+#IMAGE68{width:45px;height:45px;top:0px;left:0px;}
+#IMAGE68 > .ladi-image > .ladi-image-background{width:45px;height:45px;top:0px;left:0px;background-image:url(../images/forex/1.png);}
+#PARAGRAPH69{width:411px;top:7.5px;left:45px;}
+#PARAGRAPH69 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP70{width:456px;height:45px;top:0px;left:0px;}
+#IMAGE72{width:45px;height:45px;top:0px;left:0px;}
+#IMAGE72 > .ladi-image > .ladi-image-background{width:45px;height:45px;top:0px;left:0px;background-image:url(../images/forex/2.png;)}
+#PARAGRAPH73{width:411px;top:7.5px;left:45px;}
+#PARAGRAPH73 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP71{width:456px;height:45px;top:62px;left:0px;}
+#IMAGE75{width:45px;height:45px;top:0px;left:0px;}
+#IMAGE75 > .ladi-image > .ladi-image-background{width:45px;height:45px;top:0px;left:0px;background-image:url(../images/forex/3.png);}
+#PARAGRAPH76{width:411px;top:7.5px;left:45px;}
+#PARAGRAPH76 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP74{width:456px;height:45px;top:131px;left:0px;}
+#GROUP77{width:456px;height:176px;top:268.5px;left:59px;}
+#IMAGE80{width:45px;height:45px;top:0px;left:0px;}
+#IMAGE80 > .ladi-image > .ladi-image-background{width:45px;height:45px;top:0px;left:0px;background-image:url(../images/forex/1.png);}
+#PARAGRAPH81{width:411px;top:7.5px;left:45px;}
+#PARAGRAPH81 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP79{width:456px;height:45px;top:0px;left:0px;}
+#IMAGE83{width:45px;height:45px;top:0px;left:0px;}
+#IMAGE83 > .ladi-image > .ladi-image-background{width:45px;height:45px;top:0px;left:0px;background-image:url(../images/forex/2.png);}
+#PARAGRAPH84{width:510px;top:7.5px;left:45px;}
+#PARAGRAPH84 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP82{width:555px;height:45px;top:62px;left:0px;}
+#IMAGE86{width:45px;height:45px;top:0px;left:0px;}
+#IMAGE86 > .ladi-image > .ladi-image-background{width:45px;height:45px;top:0px;left:0px;background-image:url(../images/forex/1.png);}
+#PARAGRAPH87{width:411px;top:7.5px;left:45px;}
+#PARAGRAPH87 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP85{width:456px;height:45px;top:131px;left:0px;}
+#GROUP78{width:555px;height:176px;top:268.5px;left:573px;}
+#BOX88{width:1114px;height:224px;top:244.5px;left:40px;}
+#BOX88 > .ladi-box{background-color:rgba(255, 255, 255, 0);border-style:solid;border-color:rgb(238, 235, 102);border-width:1px;}
+}
+@media (max-width: 767px){
+#SECTION64{height:655px;}
+#SECTION64 > .ladi-section-background{background:#434343;background:-webkit-radial-gradient(circle, #434343, #000000);background:radial-gradient(circle, #434343, #000000);}
+#HEADLINE65{width:400px;top:48px;left:10px;}
+#HEADLINE65 > .ladi-headline{color:rgb(238, 202, 102);font-size:25px;font-weight:bold;text-align:center;line-height:1.6;}
+#PARAGRAPH66{width:400px;top:138px;left:10px;}
+#PARAGRAPH66 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:center;line-height:1.6;}
+#PARAGRAPH67{width:411px;top:242px;left:4px;}
+#PARAGRAPH67 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:19px;font-weight:bold;text-align:center;line-height:1.6;}
+#IMAGE68{width:25.4067px;height:30.1705px;top:0px;left:0px;}
+#IMAGE68 > .ladi-image > .ladi-image-background{width:30.1705px;height:30.1705px;top:0px;left:0px;background-image:url(../images/forex/1.png);}
+#PARAGRAPH69{width:372px;top:5.02842px;left:31.4067px;}
+#PARAGRAPH69 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP70{width:403.407px;height:33.0284px;top:0px;left:0px;}
+#IMAGE72{width:25.4067px;height:30.1705px;top:0px;left:0px;}
+#IMAGE72 > .ladi-image > .ladi-image-background{width:30.1705px;height:30.1705px;top:0px;left:0px;background-image:url(../images/forex/2.png);}
+#PARAGRAPH73{width:352px;top:5.02842px;left:32.4067px;}
+#PARAGRAPH73 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP71{width:384.407px;height:33.0284px;top:41.5682px;left:0px;}
+#IMAGE75{width:25.4067px;height:30.1705px;top:0px;left:0px;}
+#IMAGE75 > .ladi-image > .ladi-image-background{width:30.1705px;height:30.1705px;top:0px;left:0px;background-image:url(../images/forex/3.png);}
+#PARAGRAPH76{width:354px;top:5.02842px;left:33.4067px;}
+#PARAGRAPH76 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.6;}
+#GROUP74{width:387.407px;height:33.0284px;top:87.8295px;left:0px;}
+#GROUP77{width:403.407px;height:120.858px;top:301.431px;left:18px;}
+#IMAGE80{width:28.125px;height:28.125px;top:0px;left:0px;}
+#IMAGE80 > .ladi-image > .ladi-image-background{width:28.125px;height:28.125px;top:0px;left:0px;background-image:url(../images/forex/1.png);}
+#PARAGRAPH81{width:354px;top:4.6875px;left:34.125px;}
+#PARAGRAPH81 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:17px;text-align:left;line-height:1.6;}
+#GROUP79{width:388.125px;height:31.6875px;top:0px;left:0px;}
+#IMAGE83{width:28.125px;height:28.125px;top:0px;left:0px;}
+#IMAGE83 > .ladi-image > .ladi-image-background{width:28.125px;height:28.125px;top:0px;left:0px;background-image:url(../images/forex/2.png);}
+#PARAGRAPH84{width:337px;top:4.6875px;left:34.125px;}
+#PARAGRAPH84 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:18px;text-align:left;line-height:1.2;}
+#GROUP82{width:371.125px;height:47.6875px;top:38.75px;left:0px;}
+#IMAGE86{width:28.125px;height:28.125px;top:0px;left:0px;}
+#IMAGE86 > .ladi-image > .ladi-image-background{width:28.125px;height:28.125px;top:0px;left:0px;background-image:url(../images/forex/1.png);}
+#PARAGRAPH87{width:365px;top:2px;left:33.125px;}
+#PARAGRAPH87 > .ladi-paragraph{color:rgb(255, 255, 255);font-size:17px;text-align:left;line-height:1.6;}
+#GROUP85{width:398.125px;height:29px;top:96.875px;left:0px;}
+#GROUP78{width:398.125px;height:125.875px;top:442.431px;left:18px;}
+#BOX88{width:405.5px;height:307.431px;top:288px;left:7.5px;}
+#BOX88 > .ladi-box{background-color:rgba(255, 255, 255, 0);border-style:solid;border-color:rgb(238, 235, 102);border-width:1px;}
+}
