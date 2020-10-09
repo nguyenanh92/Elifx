@@ -827,7 +827,7 @@ h1, h2, h3, h4, h5,
     color: #fff; }
 
 .site-section {
-  padding: 4rem 0; }
+  padding: 3rem 0; }
   @media (max-width: 991.98px) {
     .site-section {
       padding: 3rem 0; } }
