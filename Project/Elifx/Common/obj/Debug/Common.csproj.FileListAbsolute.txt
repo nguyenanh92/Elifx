@@ -1,0 +1,5 @@
+G:\Elifx\Project\Elifx\Common\bin\Debug\Common.dll
+G:\Elifx\Project\Elifx\Common\bin\Debug\Common.pdb
+G:\Elifx\Project\Elifx\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+G:\Elifx\Project\Elifx\Common\obj\Debug\Common.dll
+G:\Elifx\Project\Elifx\Common\obj\Debug\Common.pdb

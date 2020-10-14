@@ -1,0 +1,14 @@
+G:\Elifx\Project\Elifx\Database\bin\Debug\Database.dll.config
+G:\Elifx\Project\Elifx\Database\bin\Debug\Database.dll
+G:\Elifx\Project\Elifx\Database\bin\Debug\Database.pdb
+G:\Elifx\Project\Elifx\Database\bin\Debug\EntityFramework.dll
+G:\Elifx\Project\Elifx\Database\bin\Debug\EntityFramework.SqlServer.dll
+G:\Elifx\Project\Elifx\Database\bin\Debug\EntityFramework.xml
+G:\Elifx\Project\Elifx\Database\bin\Debug\EntityFramework.SqlServer.xml
+G:\Elifx\Project\Elifx\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+G:\Elifx\Project\Elifx\Database\obj\Debug\Database.csproj.CopyComplete
+G:\Elifx\Project\Elifx\Database\obj\Debug\Database.dll
+G:\Elifx\Project\Elifx\Database\obj\Debug\Database.pdb
+G:\Elifx\Project\Elifx\Database\bin\Debug\System.Data.SqlClient.dll
+G:\Elifx\Project\Elifx\Database\bin\Debug\System.Data.SqlClient.xml
+G:\Elifx\Project\Elifx\Database\obj\Debug\Database.csprojAssemblyReference.cache

@@ -1,0 +1,79 @@
+DEBUG 2020-10-14 22:22:08,212 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-10-14 22:22:08,548 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-10-14 22:22:08,563 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Elifx.Web.Host.Startup.ElifxWebHostModule, Elifx.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Elifx.ElifxWebCoreModule, Elifx.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,566 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Elifx.ElifxApplicationModule, Elifx.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,567 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Elifx.ElifxCoreModule, Elifx.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,567 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,568 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,568 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,568 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,569 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Elifx.EntityFrameworkCore.ElifxEntityFrameworkModule, Elifx.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,569 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,569 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,570 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,571 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:08,575 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-10-14 22:22:08,785 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-14 22:22:08,785 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-14 22:22:08,785 [1    ] o.Configuration.LanguageManagementConfig - Converted Elifx (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-14 22:22:08,785 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-14 22:22:09,385 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Elifx.EntityFrameworkCore.ElifxDbContext, Elifx.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-14 22:22:10,621 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-10-14 22:22:10,675 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-10-14 22:22:10,691 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-10-14 22:22:10,696 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Elifx
+DEBUG 2020-10-14 22:22:10,703 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-10-14 22:22:11,015 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-10-14 22:22:11,212 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[Elifx.MultiTenancy.Tenant, Elifx.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Elifx.Authorization.Users.User, Elifx.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-10-14 22:22:11,293 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2020-10-14 22:22:11,293 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-10-14 22:22:11,302 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.Users.Dto.CreateUserDto
+DEBUG 2020-10-14 22:22:11,303 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.Users.Dto.UserDto
+DEBUG 2020-10-14 22:22:11,303 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-10-14 22:22:11,304 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-10-14 22:22:11,304 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.Roles.Dto.PermissionDto
+DEBUG 2020-10-14 22:22:11,304 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-10-14 22:22:11,304 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Elifx.MultiTenancy.Dto.TenantDto
+INFO  2020-10-14 22:22:14,545 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-10-14 22:22:15,102 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\private\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-10-14 22:22:15,190 [18   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-10-14 22:22:15,417 [18   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Elifx.Web.Host.Controllers.HomeController.Index (Elifx.Web.Host)'
+INFO  2020-10-14 22:22:20,198 [18   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Elifx.Web.Host.Controllers.HomeController (Elifx.Web.Host).
+INFO  2020-10-14 22:22:21,792 [14   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-10-14 22:22:21,801 [14   ] c.Infrastructure.ControllerActionInvoker - Executed action Elifx.Web.Host.Controllers.HomeController.Index (Elifx.Web.Host) in 1595.8893ms
+INFO  2020-10-14 22:22:21,804 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Elifx.Web.Host.Controllers.HomeController.Index (Elifx.Web.Host)'
+INFO  2020-10-14 22:22:21,825 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 6634.7496ms 302 
+INFO  2020-10-14 22:22:21,840 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger  
+INFO  2020-10-14 22:22:21,876 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 36.186ms 301 
+INFO  2020-10-14 22:22:21,893 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-10-14 22:22:21,952 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 58.6629ms 200 text/html;charset=utf-8
+INFO  2020-10-14 22:22:22,007 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-bundle.js  
+INFO  2020-10-14 22:22:22,010 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-standalone-preset.js  
+INFO  2020-10-14 22:22:22,012 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2020-10-14 22:22:22,016 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui.css  
+INFO  2020-10-14 22:22:22,019 [17   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2020-10-14 22:22:22,059 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'G:\Elifx\Ver 2\5.8.1\aspnet-core\src\Elifx.Web.Host\wwwroot\swagger\ui\abp.swagger.js'
+INFO  2020-10-14 22:22:22,063 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2020-10-14 22:22:22,068 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 55.9311ms 200 application/javascript
+INFO  2020-10-14 22:22:22,072 [15   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2020-10-14 22:22:22,077 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 67.9452ms 200 text/css
+INFO  2020-10-14 22:22:22,084 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 69.2522ms 200 application/javascript
+INFO  2020-10-14 22:22:22,086 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'G:\Elifx\Ver 2\5.8.1\aspnet-core\src\Elifx.Web.Host\wwwroot\swagger\ui\abp.js'
+INFO  2020-10-14 22:22:22,091 [17   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 81.5283ms 200 application/javascript
+INFO  2020-10-14 22:22:22,095 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2020-10-14 22:22:22,100 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 92.5676ms 200 application/javascript
+INFO  2020-10-14 22:22:22,387 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-10-14 22:22:22,394 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Elifx.Web.Host.Controllers.AntiForgeryController.SetCookie (Elifx.Web.Host)'
+INFO  2020-10-14 22:22:22,409 [11   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery", area = ""}. Executing controller action with signature Void SetCookie() on controller Elifx.Web.Host.Controllers.AntiForgeryController (Elifx.Web.Host).
+INFO  2020-10-14 22:22:22,446 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-10-14 22:22:22,457 [13   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-10-14 22:22:22,512 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/favicon-32x32.png  
+INFO  2020-10-14 22:22:22,517 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2020-10-14 22:22:22,526 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 9.0251ms 200 image/png
+INFO  2020-10-14 22:22:22,688 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action Elifx.Web.Host.Controllers.AntiForgeryController.SetCookie (Elifx.Web.Host) in 274.4173ms
+INFO  2020-10-14 22:22:22,690 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 244.7168ms 200 application/json;charset=utf-8
+INFO  2020-10-14 22:22:22,692 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Elifx.Web.Host.Controllers.AntiForgeryController.SetCookie (Elifx.Web.Host)'
+INFO  2020-10-14 22:22:22,695 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 308.1963ms 200 application/json; charset=utf-8

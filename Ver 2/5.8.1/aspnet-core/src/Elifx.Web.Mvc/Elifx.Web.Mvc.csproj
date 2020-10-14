@@ -1,0 +1,106 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <AssemblyName>Elifx.Web.Mvc</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>Elifx.Web.Mvc</PackageId>
+    <UserSecretsId>AbpCompanyName-Elifx-56C2EF2F-ABD6-4EFC-AAF2-2E81C34E8FB1</UserSecretsId>
+    <RootNamespace>Elifx.Web</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="wwwroot\libs\abp-web-resources\.nuget\NuGet.Config" />
+    <None Include="wwwroot\libs\abp-web-resources\.nuget\NuGet.targets" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\abp.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\abp.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jtable.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jtable.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.moment.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.moment.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr-client.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr-client.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\angularjs\abp.ng.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\requirejs\plugins\service.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\requirejs\plugins\service.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\utils\ie10fix.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\utils\ie10fix.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\styles\abp.css.map" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\styles\abp.less" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\styles\abp.mixings.css.map" />
+    <None Include="wwwroot\libs\abp-web-resources\Abp\Framework\styles\abp.mixings.less" />
+    <None Include="wwwroot\libs\abp-web-resources\gulpfile.js" />
+    <None Include="wwwroot\libs\abp-web-resources\gulpfile.min.js" />
+    <None Include="wwwroot\libs\abp-web-resources\LICENSE" />
+    <None Include="wwwroot\libs\abp-web-resources\packages.config" />
+    <None Include="wwwroot\libs\abp-web-resources\README.md" />
+    <None Include="wwwroot\libs\block-ui\jquery.blockUI.js" />
+    <None Include="wwwroot\libs\block-ui\jquery.blockUI.min.js" />
+    <None Include="wwwroot\libs\jquery\jquery.js" />
+    <None Include="wwwroot\libs\jquery\jquery.min.js" />
+    <None Include="wwwroot\libs\jquery\jquery.min.map" />
+    <None Include="wwwroot\libs\spin\spin.js" />
+    <None Include="wwwroot\libs\spin\spin.min.js" />
+    <None Include="wwwroot\libs\sweetalert\sweetalert.min.js" />
+    <None Include="wwwroot\libs\toastr\toastr.js.map" />
+    <None Include="wwwroot\libs\toastr\toastr.min.js" />
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="wwwroot\**\*;Views\**\*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elifx.Web.Core\Elifx.Web.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.447" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.2" />
+    <PackageReference Include="Abp.HangFire" Version="5.13.0" />
+    <PackageReference Include="Abp.RedisCache" Version="5.13.0" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="5.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\abp.d.ts" />
+    <TypeScriptCompile Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.d.ts" />
+    <TypeScriptCompile Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr.d.ts" />
+  </ItemGroup>
+</Project>
