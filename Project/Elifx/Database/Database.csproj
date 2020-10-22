@@ -63,7 +63,6 @@
     <Compile Include="EF\ElifxDbContext.cs" />
     <Compile Include="EF\MailConfig.cs" />
     <Compile Include="EF\Menu.cs" />
-    <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +70,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

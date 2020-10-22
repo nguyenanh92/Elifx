@@ -1,0 +1,140 @@
+﻿@using DataLibrary.Config
+@model PCar.Areas.Administrator.Models.CompanyViewModel
+@{
+    ViewBag.Title = "Trang Website";
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section styles
+{
+
+    <!-- DataTables -->
+    @*<link rel="stylesheet" href="~/Assets/Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css">*@
+    <link href="~/Scripts/jquery-ui-1.11.0/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/metro/lightgray/jtable.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/jqueryui/jtable_jqueryui.css" rel="stylesheet" />
+
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-edit"></i>
+                    Website
+                </h3>
+            </div>
+            <div class="card-body pad table-responsive">
+
+                <div id="jtable-main-container">
+
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.col -->
+</div>
+
+
+@section scripts
+{
+    <script type="text/javascript">
+
+      $(document).ready(function () {
+        $('#jtable-main-container').jtable({
+            title: '@ViewBag.Title',
+            paging: false, //Enable paging
+            pageSize: 30, //Set page size (default: 10)
+            sorting: false, //Enable sorting
+            defaultSorting: 'Name ASC', //Set default sorting
+            selecting: false, //Enable selecting
+            multiselect: false, //Allow multiple selecting
+            selectingCheckboxes: false, //Show checkboxes on first column
+            columnResizable: true, //Actually, no need to set true since it's default
+            columnSelectable: true, //Actually, no need to set true since it's default
+            saveUserPreferences: true, //Actually, no need to set true since it's default
+            toolbar: {
+                items: [{
+                    icon: '/Areas/Administrator/Content/img/add.png',
+                    text: 'Thêm mới',
+                    click: function () {
+                        window.location = '@Url.Action("Create", "Company")';
+                    }
+                }]
+            },
+            actions: {
+                listAction: '@Url.Action("List", "Company")',
+                deleteAction: '@Url.Action("Delete", "Company")',
+            },
+            fields: {
+                ID: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+                Name: {
+                    title: 'Tên khách sạn',
+                    width: '13%',
+                    display: function (data) {
+                        return '<a href="/admin/Company/Update/' + data.record.ID + '">' + data.record.Name + '</a>';
+                    }
+                },
+                Logo: {
+                    title: 'Logo',
+                    width: '8%',
+                    display: function (data) {
+                        return '<img src="' + data.record.Logo + '" width="60px" height="60px"/>';
+                    },
+                    inputClass: 'upload'
+                },
+                Image: {
+                    title: 'Ảnh đại diện',
+                    width: '8%',
+                    display: function (data) {
+                        return '<img src="' + data.record.Image + '" width="60px" height="60px"/>';
+                    },
+                    inputClass: 'upload'
+                },
+                Email: {
+                    title: 'Địa chỉ email',
+                    width: '13%',
+                },
+                Tel: {
+                    title: 'Số điện thoại',
+                    width: '13%',
+                },
+                Address: {
+                    title: 'Địa chỉ',
+                    width: '13%',
+                },
+                '':
+                    {
+                        title: '',
+                        width: '2%',
+                        sorting: false,
+                        display: function (data) {
+                            return '<button title="Edit" type="button" class="jtable-command-button jtable-edit-command-button" onclick="editRecord(' + data.record.ID + ')"><span>Edit</span></button>';
+                        }
+                    }
+            }
+        });
+        $('#jtable-main-container').jtable('load');
+    });
+    </script>
+
+
+    <script>
+
+    function editRecord(advId) {
+        window.location = '@Url.Action("Update", "Company")' + '/' + advId;
+    }
+
+    </script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.js"></script>
+    <script src="~/Scripts/jtable/jquery.jtable.js"></script>
+
+
+}

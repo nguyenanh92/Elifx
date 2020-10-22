@@ -1,0 +1,112 @@
+﻿@using DataLibrary.Database
+@using PCar.Controllers
+@{
+    Hotel detailWebsite = CommentController.DetailWebsite();
+    List<Menu> menus = CommentController.GetMainMenus();
+}
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-logo">
+            <a href="/">
+                <span class="sr-only">Vinfast Mỹ Đình</span>
+                <img src="@detailWebsite.Logo" alt="Vinfast Mỹ Đình">
+            </a>
+
+        </div>
+    </div>
+    <div class="header-main hidden-sm hidden-xs">
+        <div class="container">
+            <ul class="header-info clearfix">
+                <li class="header-address">
+                    <span class="icon"><i class="fas fa-map-marker"></i></span>
+                    <div class="text address">
+                        @detailWebsite.Address<br>
+                        Hà Nội
+                    </div>
+                </li>
+                <li class="header-agenda">
+                    <span class="icon"><i class="fas fa-calendar"></i></span>
+                    <div class="text agenda">
+                        Thứ hai - Chủ Nhật<br>
+                        8h - 17h
+                    </div>
+                </li>
+                <li class="header-phone">
+                    <span class="icon"><i class="fas fa-phone"></i></span>
+                    <div class="text phone">
+                        <a href="tel:@detailWebsite.Tel">
+                            <span class="phone-number">
+                                @detailWebsite.Tel
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-nav">
+        <div class="container">
+            <nav class="navbar navbar-inverse  navbar-static-top example6">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar6">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand hidden-md hidden-lg" href="#">
+                        </a>
+                    </div>
+                    <div id="navbar6" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            @foreach (var item in menus.Where(a => a.ParentID == 0).OrderBy(a => a.Index))
+                            {
+                                var menuchilds = menus.Where(a => a.ParentID == item.ID).ToList();
+                                if (item.IsButton == true)
+                                {
+                                    <li>
+                                        <a data-toggle="modal" data-target="#laithu" title="btn-book" class="main-nav__link btn-book"
+                                           data-drupal-link-system-path="node/6">@item.Title</a>
+                                    </li>
+
+                                }
+                                if (menuchilds.Count > 0)
+                                {
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-expanded="false">@item.Title <span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+
+                                            @foreach (var item2 in menuchilds)
+                                            {
+                                                <li><a href="@item2.Alias">@item2.Title</a></li>
+
+                                            }
+
+                                        </ul>
+                                    </li>
+
+                                }
+                                else if (item.IsButton != true)
+                                {
+                                    <li><a href="/@item.Alias">@item.Title</a></li>
+
+                                }
+
+                            }
+
+
+
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+                <!--/.container-fluid -->
+            </nav>
+        </div>
+    </div>
+</header>

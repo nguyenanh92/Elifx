@@ -1,0 +1,135 @@
+﻿@using DataLibrary.Database
+@model  PCar.Models.DetailArticle
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Menu menu = ViewBag.Menu ?? new Menu();
+}
+@section styles
+{
+    <link href="~/Assets/Web/plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Assets/Web/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/new-detail.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/news.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/news_res.css" rel="stylesheet" />
+
+}
+<div class="style_baner_header">
+    <div class="container">
+        <div class="wrapr">
+            <h2 style="color: #ffffff !important">@menu.Title</h2>
+            <div>
+                <span>
+                    <a href="/" title="trang chủ">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g id="home"><polygon points="204,471.75 204,318.75 306,318.75 306,471.75 433.5,471.75 433.5,267.75 510,267.75 255,38.25 0,267.75     76.5,267.75 76.5,471.75   " fill="#FFFFFF"></polygon></g></svg>Trang Chủ
+                    </a>
+                </span>
+                <span class="icon_arow"></span>
+                <span class="linkPage">
+                    <a href="/" title="tin tức">
+                        @menu.Title
+                    </a>
+                </span>
+                <span class="icon_arow"></span>
+                <span class="linkPage"><a href="#" title="tin tức">@Model.Article.Title</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="detail-new">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="wrap_">
+                    <h2 class="title_new">@Model.Article.Title</h2>
+                   
+                    <div class="post_new">
+                        @Html.Raw(Model.Article.Content)
+                    </div>
+                    <br />
+                    <ul class="hastag">
+                        <li><span>tags</span></li>
+                        <li><a href="" title="">VINFAST</a></li>
+                        <li><a href="" title="">NEWS</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="wrapRigh">
+                    <div class="banner_hot">
+                        <a href="" title=""><img src="@Model.Article.Image"></a>
+                    </div>
+                    <h2>Tin Nổi Bật</h2>
+                    <div class="list_new_hot">
+                         
+                        @foreach (var item in Model.Articles.Where(a => a.Hot))
+                        {
+
+                            <div class="item_new">
+                                <a href="/@item.MenuAlias/@item.ID/@item.Alias" title="">
+
+                                    <p>@item.Title</p>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wraplist wrapP_lisr">
+    <div class="container">
+        <div class="list-news">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="new_here">Tin Liên Quan</h3>
+                </div>
+                <div id="carousel_new" class="owl-carousel owl-theme">
+
+                    @foreach (var item in Model.Articles)
+                    {
+
+                        <div class="item">
+                            <div class="wrap_item">
+                                <a href="/@item.MenuAlias/@item.ID/@item.Alias" title="">
+                                    <div class="img">
+                                        <img src="@item.Image" alt="">
+                                    </div>
+                                    <div class="content_new">
+                                        <h2 class="title_new">@item.Title</h2>
+                                        <p class="conten">@Html.Raw(item.Description).</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Assets/Web/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        $('#carousel_new').owlCarousel({
+            loop: false,
+            margin: 25,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+
+}

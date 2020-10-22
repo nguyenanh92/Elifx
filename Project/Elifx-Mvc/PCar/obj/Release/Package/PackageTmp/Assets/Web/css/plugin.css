@@ -1,0 +1,891 @@
+/*! CSS Used from: https://oto.vinfast.vn/core/assets/vendor/normalize-css/normalize.css?q6ju4l ; media=all */
+
+@media all {
+    section {
+        display: block;
+    }
+    [hidden] {
+        display: none;
+    }
+    b {
+        font-weight: bold;
+    }
+    input,
+    select {
+        color: inherit;
+        font: inherit;
+        margin: 0;
+    }
+    select {
+        text-transform: none;
+    }
+    input[type="submit"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+    }
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+    input {
+        line-height: normal;
+    }
+    input[type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+    }
+    fieldset {
+        border: 1px solid #c0c0c0;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+    }
+    legend {
+        border: 0;
+        padding: 0;
+    }
+}
+
+
+/*! CSS Used from: https://oto.vinfast.vn/core/themes/stable/css/system/components/fieldgroup.module.css?q6ju4l ; media=all */
+
+@media all {
+    .fieldgroup {
+        padding: 0;
+        border-width: 0;
+    }
+}
+
+
+/*! CSS Used from: https://oto.vinfast.vn/core/themes/classy/css/components/button.css?q6ju4l ; media=all */
+
+@media all {
+    .button {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    .button:first-child {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+
+/*! CSS Used from: https://oto.vinfast.vn/core/themes/classy/css/components/form.css?q6ju4l ; media=all */
+
+@media all {
+    .form-item,
+    .form-actions {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .form-item .description {
+        font-size: 0.85em;
+    }
+    label.option {
+        display: inline;
+        font-weight: normal;
+    }
+    .form-composite > legend,
+    .label {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        font-size: inherit;
+        font-weight: bold;
+    }
+    .form-radios .form-item {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+    }
+    .form-required:after {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 0 0.3em;
+        content: "";
+        vertical-align: super;
+        background-image: url(https://oto.vinfast.vn/core/misc/icons/ee0000/required.svg);
+        background-repeat: no-repeat;
+        background-size: 6px 6px;
+    }
+}
+
+
+/*! CSS Used from: https://oto.vinfast.vn/themes/custom/car/static/css/vendor/plugins.css?q6ju4l ; media=all */
+
+@media all {
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+    }
+}
+
+
+/*! CSS Used from: https://oto.vinfast.vn/themes/custom/car/static/css/main.css?q6ju4l ; media=all */
+
+@media all {
+    div,
+    span,
+    h3,
+    p,
+    b,
+    i,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    section {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    section {
+        display: block;
+    }
+    ul {
+        list-style: none;
+    }
+    .selectric-wrapper {
+        position: relative;
+        cursor: pointer;
+    }
+    .selectric {
+        border: 1px solid #FFFFFF;
+        border-radius: 3rem;
+        background: transparent;
+        position: relative;
+        -webkit-transform: perspective(1px) scale3d(1, 1, 1);
+        transform: perspective(1px) scale3d(1, 1, 1);
+        overflow: hidden;
+        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .selectric .label {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0 30px 0 2.5rem;
+        font-size: 1.2rem;
+        line-height: 30px;
+        color: #FFFFFF;
+        height: 30px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .selectric .button {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background-color: transparent;
+        color: #BBB;
+        text-align: center;
+        font: 0/0 a;
+        *font: 20px/30px Lucida Sans Unicode, Arial Unicode MS, Arial;
+    }
+    .selectric .button:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -75%) rotate(225deg);
+        transform: translate(-50%, -75%) rotate(225deg);
+        transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border: .1rem solid currentColor;
+        border-bottom: 0;
+        border-right: 0;
+        content: "";
+        height: 0.6rem;
+        width: 0.6rem;
+    }
+    .selectric-hide-select {
+        position: relative;
+        overflow: hidden;
+        width: 0;
+        height: 0;
+    }
+    .selectric-hide-select select {
+        position: absolute;
+        left: -100%;
+    }
+    .selectric-input {
+        position: absolute!important;
+        top: 0!important;
+        left: 0!important;
+        overflow: hidden!important;
+        clip: rect(0, 0, 0, 0)!important;
+        margin: 0!important;
+        padding: 0!important;
+        width: 1px!important;
+        height: 1px!important;
+        outline: none!important;
+        border: none!important;
+        *font: 0/0 a!important;
+        background: none!important;
+    }
+    .selectric-items {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 2px;
+        background: #000000;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 1.8rem;
+        overflow: hidden;
+        z-index: -1;
+        box-shadow: 0 0 10px -6px;
+    }
+    .selectric-items .selectric-scroll {
+        height: 100%;
+        overflow: auto;
+        -webkit-tap-highlight-color: transparent;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+    .selectric-items .selectric-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+    .selectric-items .selectric-scroll::-ms-scrollbar {
+        width: 8px;
+    }
+    .selectric-items .selectric-scroll::-webkit-scrollbar-track {
+        background: #f3f3f3;
+    }
+    .selectric-items .selectric-scroll::-webkit-scrollbar-thumb {
+        background: #aaa7a7;
+        border-radius: 8px;
+    }
+    .selectric-items ul,
+    .selectric-items li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 20px;
+        min-height: 20px;
+    }
+    .selectric-items li {
+        display: block;
+        padding: 1rem 2rem;
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .selectric-items li:not(:last-child) {
+        border-bottom: 1px solid #FFFFFF;
+    }
+    .selectric-items li.selected {
+        background: #FFFFFF;
+        color: #C4161C;
+    }
+    .selectric-items li:hover {
+        background: rgba(255, 255, 255, 0.9);
+        color: #C4161C;
+    }
+    .fadeInUp {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+    }
+    .animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    @media (prefers-reduced-motion) {
+        .animated {
+            -webkit-animation: unset!important;
+            animation: unset!important;
+            transition: none!important;
+        }
+    }
+    .text-center {
+        text-align: center;
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+    }
+    .cols {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+    .col-6 {
+        flex: none;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    @media (max-width: 767px) {
+        .col-md-12 {
+            flex: none;
+        }
+        .col-md-12 {
+            width: 100%;
+        }
+    }
+    .form-group {
+        width: 100%;
+    }
+    .form-group:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+  
+    .form-label {
+        display: block;
+        font-weight: bold;
+        line-height: 1.2;
+        padding: 0 0 1.5rem;
+    }
+    .form-input {
+        transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #ffffff;
+        background-image: none;
+        border: 1px solid #c1c1c1;
+        border-radius: 2px;
+        font-family: "Montserrat", sans-serif;
+        color: #000000;
+        display: block;
+        font-size: 1.4rem;
+        height: 4.5rem;
+        line-height: 1.2;
+        max-width: 100%;
+        outline: none;
+        padding: 1.5rem 1.75rem;
+        position: relative;
+        width: 100%;
+    }
+    .form-input::-webkit-input-placeholder {
+        color: #000000;
+    }
+    .form-input::-ms-input-placeholder {
+        color: #000000;
+    }
+    .form-input::placeholder {
+        color: #000000;
+    }
+    .form-radio {
+        display: block;
+        line-height: 1.2;
+        margin: 0.5rem 0;
+        min-height: 1.2rem;
+        padding: 0 1.5rem 0 4.5rem;
+        position: relative;
+    }
+    @media only screen and (max-width: 991px) {
+        .form-radio {
+            padding-left: 2.5rem;
+        }
+    }
+    .form-radio input {
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+    }
+    .form-radio input:focus + .form-icon {
+        border-color: #ffffff;
+    }
+    .form-radio input:checked + .form-icon {
+        background: #ffffff;
+        border-color: #ffffff;
+    }
+    .form-radio .form-icon {
+        transition: all .2s ease;
+        border: 1px solid #C1C1C1;
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        z-index: 2;
+    }
+    .form-radio .form-icon {
+        background: #ffffff;
+        height: 2rem;
+        left: 0;
+        top: -0.25rem;
+        width: 2rem;
+    }
+    @media only screen and (max-width: 991px) {
+        .form-radio .form-icon {
+            width: 1.4rem;
+            height: 1.4rem;
+            top: 0;
+        }
+    }
+    .form-radio input:active + .form-icon {
+        background: #000000;
+    }
+    .form-radio .form-icon {
+        border-radius: 50%;
+    }
+    .form-radio input:checked + .form-icon::before {
+        background: #ffffff;
+        border-radius: 50%;
+        content: "";
+        height: 4px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 4px;
+    }
+    .form-input:not(:placeholder-shown):invalid {
+        border-color: #dc3545;
+    }
+    .form-input:disabled {
+        background-color: #000000;
+        cursor: not-allowed;
+        opacity: .5;
+    }
+    input:disabled + .form-icon {
+        cursor: not-allowed;
+        opacity: .5;
+    }
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+    section {
+        overflow: hidden;
+    }
+    .container {
+        width: 100%;
+        max-width: 119.5rem;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+    @media only screen and (max-width: 1024px) {
+        .container {
+            max-width: 96rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+    }
+    input {
+        outline: none;
+    }
+    .container:before,
+    .container:after {
+        content: '';
+        display: table;
+    }
+    .container:after {
+        clear: both;
+    }
+    .btn-black {
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        display: inline-block;
+        height: 3.8rem;
+        min-width: 16rem;
+        font-weight: bold;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        vertical-align: middle;
+        text-transform: uppercase;
+        overflow: hidden;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 2rem;
+        margin: 0;
+        text-align: center;
+        outline: none;
+        box-shadow: none;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+        border-color: #000000;
+        color: #000000;
+    }
+    @media only screen and (max-width: 991px) {
+        .btn-black {
+            height: 3.4rem;
+            font-size: 1rem;
+        }
+    }
+    .btn-black:hover {
+        color: #FFFFFF;
+        border-color: #C4161C;
+        background-color: #C4161C;
+    }
+    .vf-contact {
+        position: relative;
+        width: 100%;
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+    }
+    @media only screen and (max-width: 1279px) {
+        .vf-contact {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .vf-contact {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+    .vf-contact .container {
+        max-width: 93rem;
+    }
+    .vf-contact h3 {
+        font-weight: bold;
+        font-size: 3.2rem;
+        color: #000000;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        padding-top: 3rem;
+        margin-bottom: 6rem;
+    }
+    @media only screen and (max-width: 1279px) {
+        .vf-contact h3 {
+            font-size: 2.8rem;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        .vf-contact h3 {
+            font-size: 1.8rem;
+        }
+    }
+    @media only screen and (max-width: 479px) {
+        .vf-contact h3 {
+            font-size: 1.6rem;
+        }
+    }
+    @media only screen and (max-width: 1279px) {
+        .vf-contact h3 {
+            margin-bottom: 4rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact h3 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+    .vf-contact .sub-title {
+        margin-top: -4rem;
+        margin-bottom: 6rem;
+    }
+    @media only screen and (max-width: 1279px) {
+        .vf-contact .sub-title {
+            margin-top: -3rem;
+            margin-bottom: 5rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact .sub-title {
+            margin-top: -2rem;
+            margin-bottom: 3rem;
+        }
+    }
+    .vf-contact .contact-form .selectric {
+        border-radius: 0;
+        border-color: transparent;
+        border-bottom-color: #000000;
+    }
+    .vf-contact .contact-form .selectric .label {
+        height: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 1.8rem;
+        color: #000000;
+        margin: 0 4.5rem 0 0;
+        font-weight: normal;
+    }
+    @media only screen and (max-width: 991px) {
+        .vf-contact .contact-form .selectric .label {
+            font-size: 1.6rem;
+            height: 4rem;
+            line-height: 4rem;
+            margin-right: 4rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact .contact-form .selectric .label {
+            font-size: 1.4rem;
+            height: 3.8rem;
+            line-height: 3.8rem;
+        }
+    }
+    .vf-contact .contact-form .selectric .button {
+        width: 4.5rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+    }
+    .vf-contact .contact-form .selectric .button::after {
+        width: 1.6rem;
+        height: 1.6rem;
+        border: 1px solid #000000;
+        border-bottom: 0;
+        border-right: 0;
+    }
+    @media only screen and (max-width: 991px) {
+        .vf-contact .contact-form .selectric .button {
+            width: 4rem;
+            height: 4rem;
+            line-height: 4rem;
+        }
+        .vf-contact .contact-form .selectric .button::after {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact .contact-form .selectric .button {
+            width: 3.8rem;
+            height: 3.8rem;
+            line-height: 3.8rem;
+        }
+        .vf-contact .contact-form .selectric .button::after {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .vf-contact .contact-form .selectric-items li {
+        font-size: 1.6rem;
+        padding: 1.2rem 2rem;
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact .contact-form .selectric-items li {
+            font-size: 1.4rem;
+            padding: 1rem 1.5rem;
+        }
+    }
+    .vf-contact .contact-form .form-group:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+ 
+ 
+    .vf-contact .contact-form .form-group .form-item,
+    .vf-contact .contact-form .form-group .form-actions {
+        margin-bottom: 0;
+    }
+    .vf-contact .contact-form .form-group-radio {
+        display: flex;
+        justify-content: center;
+    }
+    .vf-contact .contact-form .form-group-radio .form-radio {
+        width: 11rem;
+        height: 11rem;
+        border-radius: 100%;
+        padding: 1rem;
+        margin: 0 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: #000000;
+    }
+    @media only screen and (max-width: 991px) {
+        .vf-contact .contact-form .form-group-radio .form-radio {
+            width: 10rem;
+            height: 10rem;
+            font-size: 1.4rem;
+            margin: 0 1.5rem;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .vf-contact .contact-form .form-group-radio .form-radio {
+            display: none;
+            visibility: hidden;
+        }
+    }
+    .vf-contact .contact-form .form-group-radio .form-radio .form-icon {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        border-color: #000000;
+        border-width: 2px;
+    }
+    .vf-contact .contact-form .form-group-radio .form-radio input:checked + .form-icon {
+        background-color: transparent;
+        border-color: #C4161C;
+    }
+    .vf-contact .contact-form .form-group-radio .form-radio input:checked + .form-icon::before {
+        display: none;
+    }
+    .vf-contact .contact-form .form-group-radio .form-radio input:checked + .form-icon + span {
+        color: #C4161C;
+    }
+    .vf-contact .contact-form .form-mobile {
+        display: none;
+        visibility: hidden;
+    }
+    @media only screen and (max-width: 767px) {
+        .vf-contact .contact-form .form-mobile {
+            display: block;
+            visibility: visible;
+        }
+    }
+    @media only screen and (max-width: 1279px) {
+        .vf-contact .contact-form .form-label {
+            padding-bottom: 0.5rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact .contact-form .form-label {
+            font-size: 1.4rem;
+        }
+    }
+    .vf-contact .contact-form .form-input {
+        border: transparent;
+        background-color: transparent;
+        border-bottom: 1px solid #000000;
+        padding: 0.5rem 0;
+        font-size: 1.8rem;
+        border-radius: 0;
+    }
+    @media only screen and (max-width: 991px) {
+        .vf-contact .contact-form .form-input {
+            font-size: 1.6rem;
+            height: 4rem;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .vf-contact .contact-form .form-input {
+            font-size: 1.4rem;
+            height: 3.8rem;
+        }
+    }
+    .vf-contact .contact-form .captcha {
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+    .vf-contact .contact-form .captcha .form-text {
+        background-color: transparent;
+        color: #000000;
+        border-color: transparent transparent #000000 transparent;
+        border-width: 1px;
+        padding: 0 0.5rem;
+        text-align: center;
+        width: 2.5em;
+    }
+    .vf-contact .contact-form .cols {
+        margin: 0 -4.6rem;
+    }
+    .vf-contact .contact-form .cols [class*='col-'] {
+        padding: 0 4.6rem;
+    }
+    @media only screen and (max-width: 1279px) {
+        .vf-contact .contact-form .cols {
+            margin: 0 -2rem;
+        }
+        .vf-contact .contact-form .cols [class*='col-'] {
+            padding: 0 2rem;
+        }
+    }
+ 
+    @media print {
+        * {
+            background: transparent!important;
+            color: #000!important;
+            box-shadow: none!important;
+            text-shadow: none!important;
+        }
+        p,
+        h3 {
+            orphans: 3;
+            widows: 3;
+        }
+        h3 {
+            page-break-after: avoid;
+        }
+    }
+}
+
+
+/*! CSS Used keyframes */
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 50%, 0);
+        transform: translate3d(0, 50%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 50%, 0);
+        transform: translate3d(0, 50%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}

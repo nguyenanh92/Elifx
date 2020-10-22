@@ -1,0 +1,241 @@
+﻿@using System.IdentityModel.Claims
+@using DataLibrary.Config
+@using PCar.Models
+@model  PCar.Areas.Administrator.Models.CompanyViewModel
+@{
+    ViewBag.Title = "Cập Nhật";
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+    int flag = 0;
+    int count = 0;
+
+
+}
+
+@section styles
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Assets/Admin/plugins/summernote/summernote-bs4.css">
+    <link href="~/Assets/Admin/dist/css/style.css" rel="stylesheet" />
+}
+<div class="container">
+
+    <div class="card card-secondary">
+        <div class="card-header">
+            <h3 class="card-title">@ViewBag.Title</h3>
+        </div>
+        <!-- /.card-header -->
+
+
+        <div class="card-body">
+            @Html.ValidationSummary(true)
+            @using (Html.BeginForm("Update", "Company", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+
+                @Html.HiddenFor(a=> a.ID)
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Name)
+
+                            @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Name)
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MetaTitle)
+
+                            @Html.TextBoxFor(c => c.MetaTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.MetaTitle)
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            <label for="exampleInputFile">Logo*</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+
+                                    @Html.TextBoxFor(c => c.Logo, new { @class = "form-control inputbox upload" })
+                                    @Html.ValidationMessageFor(c => c.Logo)
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputFile">Ảnh đại diện</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+
+                                    @Html.TextBoxFor(c => c.Image, new { @class = "form-control inputbox upload" })
+                                    @Html.ValidationMessageFor(c => c.Image)
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Hotline)
+
+                            @Html.TextBoxFor(c => c.Hotline, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Hotline)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Tel)
+
+                            @Html.TextBoxFor(c => c.Tel, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Tel)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Fax)
+
+                            @Html.TextBoxFor(c => c.Fax, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Fax)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Email)
+
+                            @Html.TextBoxFor(c => c.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Email)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Address)
+
+                            @Html.TextBoxFor(c => c.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Address)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Location)
+
+                            @Html.TextBoxFor(c => c.Location, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Location)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Website)
+
+                            @Html.TextBoxFor(c => c.Website, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Website)
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.CopyRight)
+
+                            @Html.TextBoxFor(c => c.CopyRight, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.CopyRight)
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MetaDescription)
+
+                            @Html.TextAreaFor(c => c.MetaDescription, new { @class = "form-control", @rows = 5 })
+                            @Html.ValidationMessageFor(c => c.MetaDescription)
+                        </div>
+
+                        <!-- select -->
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Condition)
+
+                            <div class="mb-3">
+                                @Html.TextAreaFor(c => c.Condition, new { @class = "textarea", @id = "editor-content" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.FaceBook)
+
+                            @Html.TextBoxFor(c => c.FaceBook, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.FaceBook)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Twitter)
+
+                            @Html.TextBoxFor(c => c.Twitter, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Twitter)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Youtube)
+
+                            @Html.TextBoxFor(c => c.Youtube, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Youtube)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.FaceBook)
+
+                            @Html.TextBoxFor(c => c.FaceBook, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.FaceBook)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Instagram)
+
+                            @Html.TextBoxFor(c => c.Instagram, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Instagram)
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <br />
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Cập Nhật</button>
+                    <a href="@Url.Action("Index","Company")" class="btn btn-primary">Hủy Bỏ </a>
+
+                </div>
+
+            }
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>
+
+<ul id='context-menu'>
+    <li>Xóa ảnh này !</li>
+</ul>
+
+@section scripts
+{
+    <!-- Summernote -->
+    <script src="~/Assets/Admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(function () {
+            //Add text editor
+ 
+            $('#editor-content').summernote({
+                height: 150,   //set editable area's height
+
+            });
+        })</script>
+
+    <script src="~/Assets/Admin/dist/js/pluginImage.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            bindUl();
+        });
+    </script>
+
+}
+

@@ -1,0 +1,43 @@
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\DataLibrary.dll.config
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\DataLibrary.dll
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\DataLibrary.pdb
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\EntityFramework.dll
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\EntityFramework.xml
+G:\VINFAST\Vinfast\DataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+G:\VINFAST\Vinfast\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+G:\VINFAST\Vinfast\DataLibrary\obj\Debug\DataLibrary.dll
+G:\VINFAST\Vinfast\DataLibrary\obj\Debug\DataLibrary.pdb
+G:\VINFAST\Vinfast\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\DataLibrary.dll.config
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\DataLibrary.dll
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\DataLibrary.pdb
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\EntityFramework.dll
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\EntityFramework.xml
+G:\VINFAST\Solution Project\Project\DataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+G:\VINFAST\Solution Project\Project\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+G:\VINFAST\Solution Project\Project\DataLibrary\obj\Debug\DataLibrary.dll
+G:\VINFAST\Solution Project\Project\DataLibrary\obj\Debug\DataLibrary.pdb
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\DataLibrary.dll.config
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\DataLibrary.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\DataLibrary.pdb
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\EntityFramework.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\EntityFramework.xml
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Debug\DataLibrary.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Debug\DataLibrary.pdb
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\DataLibrary.dll.config
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\DataLibrary.dll
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\DataLibrary.pdb
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\EntityFramework.dll
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\EntityFramework.xml
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\obj\Debug\DataLibrary.csproj.CoreCompileInputs.cache
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\obj\Debug\DataLibrary.dll
+G:\Elifx\Project\Elifx-Mvc\DataLibrary\obj\Debug\DataLibrary.pdb

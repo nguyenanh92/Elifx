@@ -1,0 +1,286 @@
+﻿@using System.IdentityModel.Claims
+@using DataLibrary.Config
+@using PCar.Models
+@model  PCar.Models.ProductDto
+@{
+    ViewBag.Title = "Chỉnh sửa sản phẩm";
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+    int flag = 0;
+    int count = 0;
+
+
+}
+
+@section styles
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Assets/Admin/plugins/summernote/summernote-bs4.css">
+    <link href="~/Assets/Admin/dist/css/style.css" rel="stylesheet" />
+}
+<div class="container">
+
+    <div class="card card-secondary">
+        <div class="card-header">
+            <h3 class="card-title">@ViewBag.Title</h3>
+        </div>
+        <!-- /.card-header -->
+
+
+        <div class="card-body">
+            @Html.ValidationSummary(true)
+            @using (Html.BeginForm("Update", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.HiddenFor(a=>a.ProductID)
+                @Html.HiddenFor(a=>a.LanguageID, new {@value="vi"})
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MenuID)
+
+                            @Html.DropDownListFor(p => p.MenuID, new SelectList(ViewBag.ListMenu, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(p => p.MenuID)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.ProductName)
+
+                            @Html.TextBoxFor(c => c.ProductName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.ProductName)
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MetaTitle)
+
+                            @Html.TextBoxFor(c => c.MetaTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.MetaTitle)
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Alias)
+                            @Html.TextBoxFor(c => c.Alias, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Alias)
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+
+                                    @Html.TextBoxFor(c => c.Image, new { @class = "form-control inputbox upload" })
+                                    @Html.ValidationMessageFor(c => c.Image)
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MetaDescription)
+
+                            @Html.TextAreaFor(c => c.MetaDescription, new { @class = "form-control", @rows = 5 })
+                            @Html.ValidationMessageFor(c => c.MetaDescription)
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Price)
+
+                            @Html.TextBoxFor(c => c.Price, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Price)
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Producer)
+
+                            @Html.TextBoxFor(c => c.Producer, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Producer)
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- select -->
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                @Html.CheckBoxFor(c => c.Status, new { @class = "custom-control-input", @checked = "" })
+                                <label for="Status" class="custom-control-label">Trạng thái hiển thị</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox">
+                                @Html.CheckBoxFor(c => c.Home, new { @class = "custom-control-input" })
+                                <label for="Home" class="custom-control-label">Hiển thị trang chủ</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- select -->
+                        @Html.LabelFor(c => c.Description)
+
+                        <div class="form-group">
+                            <div class="mb-3">
+                                @Html.TextAreaFor(c => c.Description, new { @class = "textarea", @id = "editor-des" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- select -->
+                        @Html.LabelFor(c => c.Content)
+
+                        <div class="form-group">
+                            <div class="mb-3">
+                                @Html.TextAreaFor(c => c.Content, new { @class = "textarea", @id = "editor-content" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <!-- select -->
+                        <label for="Content">Thêm hình ảnh cho sản phẩm </label>
+                        <div class="imgthumb">
+                            <input type="text" id="img-thumb" class="input box upload" style="width: 75%" />
+                            <button type="button" id="add" class="btn-sm btn-info">Thêm Ảnh</button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <div class="control-group">
+                            <ul class="adminformlist">
+                                <li>
+                                    <ul style="clear: both; height: auto; width: 100%;" class="allImage" id="">
+                                        @if (Model.EGalleryITems != null)
+                                        {
+                                            foreach (ProductDto.EGalleryITem gallery in Model.EGalleryITems)
+                                            {
+                                                <li>
+                                                    <input id="EGalleryITems_@(flag)__Image" name="EGalleryITems[@(flag)].Image" type="hidden" value="@(gallery.Image)" />
+                                                    <img src="@(gallery.Image)" width="105" height="80" />
+                                                </li>
+                                                flag++;
+                                            }
+                                        }
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Cập Nhật</button>
+                    <a href="@Url.Action("Index","Product")" class="btn btn-primary">Hủy Bỏ </a>
+
+                </div>
+
+            }
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>
+
+<ul id='context-menu'>
+    <li>Xóa ảnh này !</li>
+</ul>
+
+@section scripts
+{
+    <!-- Summernote -->
+    <script src="~/Assets/Admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(function () {
+            //Add text editor
+            $('#editor-des').summernote({
+                height: 150,   //set editable area's height
+
+            });
+            $('#editor-content').summernote({
+                height: 350,   //set editable area's height
+
+            });
+        })
+    </script>
+
+    <script src="~/Assets/Admin/dist/js/pluginImage.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            AutoAlias('ProductName', 'Alias');
+            bindUl();
+
+
+            bindRightClick();
+
+            $('html').click(function (e) {
+                $('#context-menu').hide();
+            });
+            $('#context-menu').click(function (e) {
+                e.stopPropagation();
+                $(curentImg).remove();
+                sapxep();
+                $('#context-menu').hide(100);
+            });
+            $(window).resize(function () {
+                $('#context-menu').hide();
+            });
+            //
+            var count = 0;
+
+            //Thêm ảnh
+            $('#add').click(function () {
+                if ($('#img').val() == "") {
+                    alert("Xin vui lòng chọn ảnh");
+                } else {
+                    var data = '';
+                    while (true) {
+                        if ($('#EHotelGalleries_0__Image').length == 0) {
+                            data = loadHtmlForImage(0);
+                            count = 1;
+                        } else {
+                            data = loadHtmlForImage(count++);
+                        }
+                        break;
+                    }
+                    $('.allImage').append(data);
+                    sapxep();
+                    bindRightClick();
+                    $('#img-title').val('');
+                    $('#img-thumb').val('');
+                    $('#img').val('');
+                }
+
+            });
+        });
+    </script>
+
+}
+

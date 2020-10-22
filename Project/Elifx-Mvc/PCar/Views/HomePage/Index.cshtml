@@ -1,0 +1,341 @@
+﻿@using DataLibrary.Database
+@using PCar.Controllers
+@using TeamplateHotel.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Slider> sliders = CommentController.GetListSlider();
+
+    List<Product> products = CommentController.LstProducts();
+
+    List<ShowObject> articles = CommentController.LstArticles();
+}
+
+<section data-aos="fade-up"  data-aos-duration="800">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            @foreach (var slider in sliders.Select((value, index) => new { Value = value, Index = index }))
+            {
+                var active = slider.Index == 0 ? "active" : string.Empty;
+
+                <div class="item @active" id="img-sliderhome">
+                    <img src="@slider.Value.Image" alt="Banner"
+                         style="width: 100%;">
+
+                </div>
+
+            }
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+
+
+<main>
+    <section class="product" data-aos="zoom-in-up"  data-aos-duration="900">
+        <div class="block-cars">
+            <div class="container">
+                <div class="icon-img">
+                    <img src="~/Assets/Web/img/icon-logo-vf.png" />
+                </div>
+                <h1 class="title">VinFast Mỹ Đình - Đại lý VinFast Việt Nam</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+
+
+
+                        @foreach (var item in products)
+                        {
+                            <div class="col-sm-4 center">
+                                <a href="@item.MenuAlias/@item.ProductID/@item.Alias">
+                                    <h3>@item.MetaTitle</h3>
+                                </a>
+                                <div class="price">@item.Price.ToString("##,##")₫</div>
+                                <a href="@item.MenuAlias/@item.ProductID/@item.Alias" class="img-product">
+                                    <img src="@item.Image" alt="@item.MetaTitle">
+                                </a>
+
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="service" >
+        <div class="quick-button " >
+            <ul class="container clearfix" data-aos="zoom-in-down" data-aos-duration="1200">
+                <li class="pricing-list"><a data-toggle="modal" data-target="#job">Yêu cầu<br>báo giá </a></li>
+                <li class="find-dealer"><a data-toggle="modal" data-target="#tragop">Mua xe<br>trả góp</a></li>
+                <li class="price-calculator"><a data-toggle="modal" data-target="#chiphi">Dự toán<br>chi phí</a></li>
+                <li class="test-drive"><a data-toggle="modal" data-target="#laithu">Đăng ký<br>lái thử</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section data-aos="zoom-out-up" data-aos-duration="1400" >
+        <div class="section-why-choose-us hidden-xs-down">
+            <div class="container">
+                <h2 class="section-title">Tại sao nên mua xe tại Vinfast Mỹ Đình</h2>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 reason">
+                                <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                                <div class="text">
+                                    <h6 class="name">GIÁ CẢ ƯU ĐÃI - GIAO XE SỚM</h6>
+                                    <div class="content">
+                                        Vinfast Mỹ Đình luôn cam kết mang lại mức giá ưu đãi nhất cho quý khách với
+                                        thời gian giao xe nhanh nhất trong 1 ngày.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 reason">
+                                <div class="icon"><i class="fas fa-tools"></i></div>
+                                <div class="text">
+                                    <h6 class="name">
+                                        <p>
+                                            BẢO HÀNH THEO TIÊU CHUẨN TOÀN QUỐC
+                                        </p>
+                                    </h6>
+                                    <div class="content">
+                                        Anh chị sẽ yên tâm khi mua xe tại Vinfast Mỹ Đình, vì chúng
+                                        tôi luôn bảo hành, bảo dưỡng và sửa chữa theo tiêu chuẩn chất lượng của
+                                        Vinfast trên toàn quốc.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 reason">
+                                <div class="icon"><i class="fas fa-award"></i></div>
+                                <div class="text">
+                                    <h6 class="name">KHUYẾN MÃI NHIỀU NHẤT</h6>
+                                    <div class="content">
+                                        Với hoạt động bán hàng sôi nổi, chúng tôi luôn cập nhật sớm
+                                        nhất các chương trình khuyến mãi của hãng và đại lý
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 reason">
+                                <div class="icon"><i class="fas fa-user-shield"></i></div>
+                                <div class="text">
+                                    <h6 class="name">TƯ VẤN TẬN TÌNH</h6>
+                                    <div class="content">
+                                        Đội ngũ tư vấn luôn sẵn lòng giúp Anh chị tìm được chiếc xe
+                                        ưng ý.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 guarantee">
+                        <img src="~/Assets/Web/img/Sedan-rear.jpg" alt="Tại sao nên mua xe tại Vinfast Mỹ Đình" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-aos="fade-down"
+             data-aos-easing="linear"
+             data-aos-duration="1300">
+        <div class="container home-news">
+            <div class="new-title">
+                <img src="~/Assets/Web/img/title.png" />
+            </div>
+            <hr>
+            <div class="post clearfix">
+                <div class="col-md-12">
+                    @foreach (var item in articles)
+                    {
+                        <div class="col-md-4">
+                            <div class="item-article">
+                                <a href="">
+                                    <img src="@item.Image" class="" alt="">
+                                </a>
+                                <time><i class="far fa-calendar-alt"></i> &nbsp; @DateTime.Now</time>
+                                <h2>
+                                    <a title="" href="@item.MenuAlias/@item.ID/@item.Alias">
+                                        @item.Title
+                                    </a>
+                                </h2>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="form-datxe">
+        <form class="contact-form">
+            <div class="container ">
+                <div class="row">
+                    <h3 class="title-from text-center"> ĐẶT TRƯỚC XE Ô TÔ VINFAST</h3>
+                    <p class="sub-title text-center">
+                        Hãy là người đầu tiên sở hữu ô tô bản sắc Việt đẳng cấp quốc
+                        tế.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="container"  data-aos="zoom-in"  data-aos-easing="linear"
+                 data-aos-duration="1400">
+                <div class="row">
+                    <div class="wrapper">
+                        <label class="check_point">
+                            <input type="radio" name="demo" id="demo1">
+                            <span for="demo1">Lux SA 2.0</span>
+                        </label>
+                        <label class="check_point">
+                            <input type="radio" name="demo" id="demo2">
+                            <span for="demo2">Lux A 2.0</span>
+                        </label>
+                        <label class="check_point">
+                            <input type="radio" name="demo" id="demo3">
+                            <span for="demo3">Fadil</span>
+                        </label>
+
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="info-bxe ">
+                                <label class="form-label js-form-required form-required" for="edit-fullname">
+                                    Họ và
+                                    Tên
+                                </label>
+                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
+                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
+                                       maxlength="128" required="required" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="info-bxe ">
+                                <label class="form-label form-required">Tỉnh Thành</label>
+                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
+                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
+                                       maxlength="128" required="required" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="info-bxe ">
+                                <label class="form-label form-required">Quận Huyện</label>
+
+                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
+                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
+                                       maxlength="128" required="required" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="info-bxe ">
+                                <label class="form-label " for="edit-fullname">Địa Chỉ</label>
+                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
+                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
+                                       maxlength="128" required="required" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="info-bxe ">
+                                <label class="form-label form-required">Thư Điện Tử</label>
+                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
+                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
+                                       maxlength="128" required="required" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="info-bxe ">
+                                <label class="form-label form-required">Số Điện Thoại</label>
+
+                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
+                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
+                                       maxlength="128" required="required" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                    <div class="center" style="margin-top: 15px;">
+                        <img src="~/Assets/Web/img/Untitled.png" class="center-img" height="55" />
+                        <br /> <br />
+
+                        <input class="btn-black button js-form-submit form-submit"
+                               data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op"
+                               value="Gửi Tin Nhắn">
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="img way-animate animated fadeIn" data-animate="fadeIn" style="opacity: 1; animation-delay: 0s;">
+            <figure style="background-image: url('https://oto.vinfast.vn/sites/default/files/2019-03/SEDAN_side_1920.jpg') "></figure>
+        </div>
+    </section>
+</main>
+
+@RenderPage("../Shared/Modal/_BaoGia.cshtml")
+
+@RenderPage("../Shared/Modal/_ChiPhi.cshtml")
+
+@RenderPage("../Shared/Modal/_LaiThu.cshtml")
+
+@RenderPage("../Shared/Modal/_Tragop.cshtml")
+
+
+
+
+
+
+@section scripts
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.check_point').click(function () {
+                $('.check_point').removeClass('active');
+                $(this).toggleClass('active')
+            })
+        })
+    </script>
+
+}

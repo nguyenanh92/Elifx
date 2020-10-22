@@ -1,0 +1,10 @@
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\DataLibrary.dll.config
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\DataLibrary.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\DataLibrary.pdb
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\EntityFramework.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\EntityFramework.SqlServer.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\EntityFramework.xml
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\bin\Release\EntityFramework.SqlServer.xml
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Release\DataLibrary.csproj.CopyComplete
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Release\DataLibrary.dll
+G:\VINFAST\VINFAST-PROJECT-master\DataLibrary\obj\Release\DataLibrary.pdb

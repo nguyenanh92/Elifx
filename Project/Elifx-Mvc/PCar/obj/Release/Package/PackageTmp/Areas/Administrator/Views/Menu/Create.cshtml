@@ -1,0 +1,197 @@
+﻿@using System.IdentityModel.Claims
+@using DataLibrary.Config
+@model PCar.MenuDto
+@{
+    ViewBag.Title = "Thêm Menu ";
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+
+    SystemMenuLocation menuLocation = ViewBag.MenuLocation ?? new SystemMenuLocation();
+
+
+}
+
+@section styles
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Assets/Admin/plugins/summernote/summernote-bs4.css">
+}
+<div class="container">
+
+    <div class="card card-secondary">
+        <div class="card-header">
+            <h3 class="card-title">@ViewBag.Title</h3>
+        </div>
+        <!-- /.card-header -->
+
+
+        <div class="card-body">
+            @Html.ValidationSummary(true)
+            @using (Html.BeginForm("Create", "Menu", FormMethod.Post, new { @class = "form-horizontal" }))
+            {    
+                
+                <input type="hidden" name="Location" value="@menuLocation.LocationId" />
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Title)
+
+                            @Html.TextBoxFor(c => c.Title, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Title)
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MetaTitle)
+
+                            @Html.TextBoxFor(c => c.MetaTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.MetaTitle)
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Alias)
+                            @Html.TextBoxFor(c => c.Alias, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Alias)
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                  
+                                    @Html.TextBoxFor(c => c.Images, new { @class = "form-control inputbox upload" })
+                                    @Html.ValidationMessageFor(c => c.Images)
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.MetaDescription)
+
+                            @Html.TextAreaFor(c => c.MetaDescription, new { @class = "form-control", @rows = 5 })
+                            @Html.ValidationMessageFor(c => c.MetaDescription)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- select -->
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Type)
+                            @Html.DropDownListFor(c => c.Type, new SelectList(ViewBag.ListTypeMenu, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Type)
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.ParentID)
+                            @Html.DropDownListFor(c => c.ParentID, new SelectList(ViewBag.ListParentMenu, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.ParentID)
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="linkout" style="display: none;">
+                    <div class="col-sm-12">
+                        <!-- select -->
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.Link)
+                            @Html.TextBoxFor(c => c.Link, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Link)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- select -->
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                @Html.CheckBoxFor(c => c.Status, new { @class = "custom-control-input", @checked = "" })
+                                <label for="Status" class="custom-control-label">Trạng thái hiển thị</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                @Html.CheckBoxFor(c => c.IsMenu, new { @class = "custom-control-input", @checked = "" })
+                                <label for="IsMenu" class="custom-control-label">Hiển thị trên thanh Menu</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                @Html.CheckBoxFor(c => c.IsButton, new { @class = "custom-control-input" })
+                                <label for="IsButton" class="custom-control-label">Nút chức năng Menu</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- select -->
+                        @Html.LabelFor(c => c.Description)
+
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <textarea id="editor-des" class="textarea" name="Description" placeholder="Place some text here" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success">Tạo Mới</button>
+                    <a href="@Url.Action(menuLocation.AliasMenu,"Menu")" class="btn btn-primary">Hủy Bỏ </a>
+
+                </div>
+
+            }
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>
+
+
+@section scripts
+{
+    <!-- Summernote -->
+    <script src="~/Assets/Admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(function () {
+            //Add text editor
+            $('#editor-des').summernote({
+                height: 150,   //set editable area's height
+               
+            });
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            AutoAlias('Title', 'Alias');
+            bindUl();
+             if ($("#Type").val() == 9) {
+                $("#linkout").show();
+            } else {
+                $("#linkout").hide();
+            }
+
+            $("#Type").change(function () {
+                if ($(this).val() == 9) {
+                    $("#linkout").show();
+                } else {
+                    $("#linkout").hide();
+                }
+            });
+        });
+    </script>
+
+}

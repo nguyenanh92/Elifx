@@ -16,7 +16,6 @@ namespace Database.EF
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<MailConfig> MailConfigs { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
 

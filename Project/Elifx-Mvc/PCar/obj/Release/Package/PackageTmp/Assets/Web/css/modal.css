@@ -1,0 +1,67 @@
+﻿@media (min-width: 667px) {
+    .modal_job .modal-dialog {
+        max-width: 667px;
+    }
+}
+
+.modal_job {
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+     .modal-title {
+         font-weight: bold;
+        font-family: "Montserrat";
+    }
+
+    .modal_job .modal-body .name {
+        font-size: 14px;
+        font-family: "Montserrat";
+        color: #000;
+        text-transform: capitalize;
+        margin-bottom: 0
+    }
+
+    .modal_job .important {
+        color: #e40d0d;
+        font-size: 20px
+    }
+
+.modal_job input {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #f5f5f5;
+    margin-top: 10px;
+}
+
+input, input:focus, button, button:focus {
+    outline: none;
+    outline-style: none;
+    outline-width: 0
+}
+
+.modal_job .form_gop {
+    margin-bottom: 15px
+}
+
+.modal_job .mide input {
+    width: auto;
+    margin-right: 20px
+}
+
+.modal_job .submit {
+    text-align: center;
+}
+
+    .modal_job .submit button {
+        padding: 9px 25px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 30px;
+        background: #c5161d;
+        color: #fff;
+        text-transform: uppercase;
+    }

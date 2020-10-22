@@ -1,0 +1,63 @@
+﻿@using DataLibrary.Database
+@using PCar.Controllers
+@using TeamplateHotel.Models
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Menu menu = ViewBag.Menu ?? new Menu();
+
+    ShowObject article = CommentController.ArticleAbout();
+}
+@section styles
+{
+    <link href="~/Assets/Web/plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Assets/Web/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/new-detail.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/news.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/news_res.css" rel="stylesheet" />
+ 
+}
+<div class="style_baner_header">
+    <div class="container">
+        <div class="wrapr">
+            <h2 style="color: #ffffff !important">@menu.Title</h2>
+            <div>
+                <span>
+                    <a href="/" title="trang chủ">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"><g id="home"><polygon points="204,471.75 204,318.75 306,318.75 306,471.75 433.5,471.75 433.5,267.75 510,267.75 255,38.25 0,267.75     76.5,267.75 76.5,471.75   " fill="#FFFFFF"></polygon></g></svg>Trang Chủ
+                    </a>
+                </span>
+                <span class="icon_arow"></span>
+                <span class="linkPage">
+                    <a href="/" title="tin tức">
+                        @menu.Title
+                    </a>
+                </span>
+                <span class="icon_arow"></span>
+                <span class="linkPage"><a href="#" title="tin tức">@article.Title</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+     <div class="container">
+        <div class="row">
+            <div class="col-lg-9" style="border-right: 1px solid #ececec; padding: 25px;" >
+                <div class="wrap_">
+                    <h3 class="title_new">@article.Title</h3>
+                    <div class="post_new">
+                        @Html.Raw(article.Content)
+                    </div>
+                    <br />
+        
+                </div>
+            </div>
+            <div class="col-lg-3" id="" >
+                @RenderPage("../Shared/_SideBar.cshtml")
+            </div>
+        </div>
+    </div>
+
+ 
+@RenderPage("../Shared/_FormDatXe.cshtml")
+ 

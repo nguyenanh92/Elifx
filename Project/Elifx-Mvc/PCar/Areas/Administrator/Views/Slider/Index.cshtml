@@ -1,0 +1,164 @@
+﻿@using DataLibrary.Config
+@model PCar.Areas.Administrator.Models.SliderViewModel
+@{
+    ViewBag.Title = "Trang Slider Ảnh";
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section styles
+{
+
+
+    <link href="~/Scripts/jquery-ui-1.11.0/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/metro/lightgray/jtable.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/jqueryui/jtable_jqueryui.css" rel="stylesheet" />
+
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-edit"></i>
+                    Quản lý slider ảnh
+                </h3>
+            </div>
+            <div class="card-body pad table-responsive">
+                <form action="@Url.Action("UpdateIndex", "Slider")" method="POST" id="updateIndex">
+                    <div id="lstSlider">
+
+                    </div>
+                </form>
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.col -->
+</div>
+
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#lstSlider').jtable({
+                title: '@ViewBag.Title',
+                paging: true, //Enable paging
+                pageSize: 20, //Set page size (default: 10)
+                sorting: true, //Enable sorting
+                defaultSorting: 'Name ASC', //Set default sorting
+                selecting: true, //Enable selecting
+                multiselect: true, //Allow multiple selecting
+                selectingCheckboxes: true, //Show checkboxes on first column
+                columnResizable: true, //Actually, no need to set true since it's default
+                columnSelectable: true, //Actually, no need to set true since it's default
+                saveUserPreferences: true, //Actually, no need to set true since it's default
+                toolbar: {
+                    items: [
+                        {
+                            icon: '/Scripts/jtable/themes/lightcolor/add.png',
+                            text: 'Thêm mới',
+                            click: function() {
+                                window.location = '@Url.Action("Create", "Slider")';
+                            }
+                        }, {
+                            icon: '/Scripts/jtable/themes/lightcolor/column-sortable.png',
+                            text: 'Sắp xếp',
+                            click: function() {
+                                $("#updateIndex").submit();
+                            }
+                        }
+                    ]
+                },
+                actions: {
+                    listAction: '@Url.Action("List", "Slider")',
+                    deleteAction: '@Url.Action("Delete", "Slider")',
+                },
+                fields: {
+                    ID: {
+                        key: true,
+                        create: false,
+                        edit: false,
+                        list: false
+                    },
+                    Title: {
+                        title: '@Html.DisplayNameFor(u => u.Title)',
+                        width: '13%',
+                        display: function(data) {
+                            return '<a href="/admin/Slider/Update/' +
+                                data.record.ID +
+                                '">' +
+                                data.record.Title +
+                                '</a>';
+                        }
+                    },
+                    Image: {
+                        title: '@Html.DisplayNameFor(c => c.Image)',
+                        width: '8%',
+                        display: function(data) {
+                            return '<img src="' + data.record.Image + '" width="60px" height="60px"/>';
+                        },
+                        inputClass: 'upload'
+                    },
+                    Link: {
+                        title: '@Html.DisplayNameFor(c => c.Link)',
+                        width: '13%',
+                    },
+                    Index: {
+                        title: 'Sort',
+                        width: '4%',
+                        sorting: false,
+                        display: function(data) {
+                            return '<input type="text" name="sort[' +
+                                data.record.ID +
+                                '].Index" style="width:25px" value="' +
+                                data.record.Index +
+                                '"/>';
+                        }
+                    },
+                    ViewAll: {
+                        title: '@Html.DisplayNameFor(c => c.ViewAll)',
+                        width: '8%',
+                        type: 'checkbox',
+                        values: { 'false': 'Không hiển thị', 'true': 'Hiển thị' },
+                        defaultValue: 'true'
+                    },
+                    Status: {
+                        title: '@Html.DisplayNameFor(c => c.Status)',
+                        width: '5%',
+                        type: 'checkbox',
+                        values: { 'false': 'Không hiển thị', 'true': 'Hiển thị' },
+                    },
+                        '':
+                        {
+                            title: '',
+                            width: '2%',
+                            sorting: false,
+                            display: function(data) {
+                                return '<button title="Edit" type="button" class="jtable-command-button jtable-edit-command-button" onclick="editRecord(' +
+                                    data.record.ID +
+                                    ')"><span>Edit</span></button>';
+                            }
+                        }
+                    }
+                });
+
+
+            //Load student list from server
+            $('#lstSlider').jtable('load');
+        });
+
+    </script>
+
+    <script>
+        function editRecord(advId) {
+            window.location = '@Url.Action("Update", "Slider")' + '/' + advId;
+        }
+    </script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.js"></script>
+    <script src="~/Scripts/jtable/jquery.jtable.js"></script>
+
+
+    }

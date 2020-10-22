@@ -1,0 +1,67 @@
+﻿@model PCar.Areas.Administrator.Models.LoginViewModel
+@{
+    ViewBag.Title = "LoginAdmin";
+    Layout = "~/Areas/Administrator/Views/Shared/_Login.cshtml";
+}
+<div class="">
+    
+<div class="login-box">
+    <div class="login-logo">
+        <img src="https://i.pinimg.com/originals/8f/37/cc/8f37cc6e05efa741aaf7f7afe7d927eb.png" alt="" class="brand-image  elevation-3" style="max-height: 120px; width: 100%;">
+     </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">@ViewBag.Messages</p>
+
+            <form action="/Admin/Login/LoginSubmit" method="post">
+                @Html.ValidationMessageFor(a => a.username)
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="UserName">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(a => a.password)
+
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @*<div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">
+                                Remember Me
+                            </label>
+                        </div>
+                    </div>*@
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+             
+            <!-- /.social-auth-links -->
+
+            @*<p class="mb-1">
+                <a href="#">I forgot my password</a>
+            </p>*@
+
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+</div>

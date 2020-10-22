@@ -1,0 +1,196 @@
+﻿@using DataLibrary.Database
+@model  PCar.Models.DetailProduct
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Menu menu = ViewBag.Menu ?? new Menu();
+    int i = 1;
+}
+
+
+@section styles
+{
+    <link href="~/Assets/Web/css/plugin.css" rel="stylesheet" />
+
+    <link href="~/Assets/Web/css/slider-plugins.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/slider-product.css" rel="stylesheet" />
+    <link href="~/Assets/Web/css/product-detail.css" rel="stylesheet" />
+}
+
+<div id="page-product">
+    <div class="banner-product">
+        <figure>
+            <div class="banner-img">
+                <img src="~/Assets/Web/img/lux-a2.jpg" />
+                <h1>VinFast Lux A2.0<i>Mãnh liệt tinh thần Việt Nam</i></h1>
+            </div>
+        </figure>
+
+    </div>
+    <div class="clr"></div>
+    <ul class="options ">
+        <li class="mfl"><h3>@Model.Product.MetaTitle</h3><p><b>@Model.Product.Price.ToString("##,##") VNĐ</b></p></li>
+        <li class="mfr"><h3>Hỗ trợ mua trả góp</h3><p><b>LÃI SUẤT THẤP, GIẢI NGÂN NHANH</b></p></li>
+        <li class="mfr"><h3>Khuyến mãi hấp dẫn</h3><p><b>TẶNG PHỤ KIỆN, BẢO HIỂM XE</b></p></li>
+    </ul>
+    <div class="clr"></div>
+</div>
+
+<div class="single-product-section">
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="shop-area">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Product Details Left -->
+                            <div class="product-details-left">
+                                <div class="product-details-images slider-lg-image-1 tf-element-carousel"
+                                     data-slick-options='{
+                                            "slidesToShow": 1,
+                                            "slidesToScroll": 1,
+                                            "infinite": true,
+                                            "asNavFor": ".slider-thumbs-1",
+                                            "arrows": false,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                            }'>
+
+
+                                    @foreach (var item in Model.ProductGalleries)
+                                    {
+                                        <div class="lg-image">
+                                            <img src="@item.ImageLarge" alt="">
+                                            <a href="@item.ImageLarge"
+                                               class="popup-img venobox" data-gall="myGallery">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
+                                    }
+
+
+
+                                </div>
+                                <div class="product-details-thumbs slider-thumbs-1 tf-element-carousel"
+                                     data-slick-options='{
+                                            "slidesToShow": 4,
+                                            "slidesToScroll": 1,
+                                            "infinite": true,
+                                            "focusOnSelect": true,
+                                            "asNavFor": ".slider-lg-image-1",
+                                            "arrows": false,
+                                            "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                            "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                            }' data-slick-responsive='[
+                                            {"breakpoint":991, "settings": {
+                                                "slidesToShow": 3
+                                            }},
+                                            {"breakpoint":767, "settings": {
+                                                "slidesToShow": 4
+                                            }},
+                                            {"breakpoint":479, "settings": {
+                                                "slidesToShow": 2
+                                            }}
+                                        ]'>
+
+                                    @foreach (var item in Model.ProductGalleries)
+                                    {
+                                        <div class="sm-image">
+                                            <img src="@item.ImageSmall"
+                                                 alt="product image thumb">
+                                        </div>
+                                    }
+
+
+
+
+                                </div>
+                            </div>
+                            <!--Product Details Left -->
+                        </div>
+                        <div class="col-md-6">
+                            <!--Product Details Content Start-->
+                            <div class="product-details-content">
+
+                                <h2>@Model.Product.ProductName</h2>
+                                <div class="single-product-reviews">
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                    <i class="fa fa-star active"></i>
+                                 </div>
+                                <div class="single-product-price">
+                                    <span class="price new-price">@Model.Product.Price.ToString("##,###")₫</span>
+                                    @*<span class="regular-price">$77.00</span>*@
+                                </div>
+                                <div class="product-description">
+                                    <p>
+                                        @Html.Raw(Model.Product.Description)
+                                    </p>
+                                </div>
+                                <div class="single-product-quantity">
+                                    <form class="add-quantity" action="#">
+                                        <div class="product-quantity">
+                                            <input value="1" type="number">
+                                        </div>
+                                        <div class="add-to-link">
+                                            <button class="btn"><i class="ion-bag"></i>Đặt Ngay</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="wishlist-compare-btn">
+                                    <a href="#" class="wishlist-btn">Nhận Báo Giá</a>
+                                    <a href="#" class="add-compare">Yêu Cầu Tư Vấn</a>
+                                </div>
+                                <div class="product-meta">
+                                    <span class="posted-in">
+                                        Categories:
+                                        <a href="#">Accessories</a>,
+                                        <a href="#">Electronics</a>
+                                    </span>
+                                </div>
+                                <div class="single-product-sharing">
+                                    <h3>Share this product</h3>
+                                    <ul>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-vimeo"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Product Details Content End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div>
+            <ul class="tabs-pro">
+                <li class="active" rel="tab0">Thông Tin Chi Tiết Sản Phẩm</li>
+            </ul>
+            <br />
+            <br />
+
+            <div class="container">
+                @Html.Raw(Model.Product.Content)
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@RenderPage("~/Views/Shared/_FormDatXe.cshtml")
+
+@section scripts
+{
+    <script src="~/Assets/Web/js/plugins.js"></script>
+    <script src="~/Assets/Web/js/slider.js"></script>
+
+}

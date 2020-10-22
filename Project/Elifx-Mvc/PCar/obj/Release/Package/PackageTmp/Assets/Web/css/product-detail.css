@@ -1,0 +1,147 @@
+﻿banner-product {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+}
+
+.banner-product .banner-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-product .banner-img figure {
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+ 
+#page-product .banner-img h1 {
+     position: absolute;
+     bottom: 60px;
+     left: 60px;
+     font-size: 40px;
+     margin: 0;
+     font-weight: 500;
+     color: #fff;
+     text-shadow: 0 0 10px #000;
+ }
+
+#page-product .banner-img h1 i {
+    font-style: normal;
+    margin-left: 30px;
+    padding-left: 30px;
+    border-left: 2px solid #fff;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+     #page-product .banner-img h1 {
+         bottom: 10px;
+         left: 10px;
+         font-size: 20px;
+     }
+ }
+
+@media (max-width: 768px) {
+     #page-product .banner-img h1 i {
+         margin-left: 10px;
+         padding-left: 10px;
+         font-size: 18px;
+     }
+ }
+
+@media (max-width: 768px) {
+     .banner-img figure {
+         width: 100%;
+         height: 450px !important;
+     }
+ }
+
+a.add-compare {
+    background: #c4161c !important;
+    color: #fff !important;
+}
+
+
+
+ 
+#page-product .options {
+    text-align: center;
+    float: left;
+    width: 100%;
+    background-color: #f8f8f8;
+    box-shadow: 5px 5px 6px rgba(0,0,0,.1);
+}
+
+#page-product .options li {
+    display: inline-block;
+    border-right: 1px solid #ebebeb;
+    padding: 20px 15px;
+}
+
+#page-product .options li:last-child {
+    border-right: none;
+}
+
+#page-product .options li h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+#page-product .options li p {
+    margin: 0;
+    color: #eb1b2e;
+    font-weight: 500;
+}
+/*! CSS Used from: Embedded */
+@media (max-width: 768px) {
+    #page-product .options li {
+        display: block;
+        border-right: 0;
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #page-product .options li h3, #page-product .options li p {
+        font-size: 16px;
+    }
+}
+
+ 
+.clr {
+    clear: both;
+    float: none;
+}
+
+ul.tabs-pro {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+    float: left;
+}
+
+ul.tabs-pro li {
+    display: block;
+    float: left;
+    font-weight: 400;
+    padding: 7px 14px;
+    text-decoration: none;
+    margin-bottom: -1px;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+ul.tabs-pro li.active, ul.tabs-pro li:hover {
+    color: #fff;
+    background: #ec1016;
+}
