@@ -22,6 +22,8 @@ namespace DataLibrary.Config
 
         public const int Gallery = 9; 
 
+        public const int Section = 10; 
+
 
         public static Dictionary<int, string> CategoryType = new Dictionary<int, string>()
         {
@@ -29,19 +31,21 @@ namespace DataLibrary.Config
 
             {Article, "Trang Bài Viết"},
 
-            {Contact, "Trang Liên Hệ"},
+            {Section, "Section"},
 
-            {Location, "Trang Vị Trí"},
+            //{Contact, "Trang Liên Hệ"},
 
-            {OutSite, "Trang Link"},
+            //{Location, "Trang Vị Trí"},
 
-            {About, "Trang Giới Thiệu"},
+            //{OutSite, "Trang Link"},
 
-            {Register, "Trang Nhận Báo Giá"},
+            //{About, "Trang Giới Thiệu"},
 
-            {Product, "Trang Sản Phẩm"},
+            //{Register, "Trang Nhận Báo Giá"},
 
-            {Gallery, "Trang Gallery"},
+            //{Product, "Trang Sản Phẩm"},
+
+            //{Gallery, "Trang Gallery"},
              
         };
     }

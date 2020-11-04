@@ -103,12 +103,6 @@
                             return '<input type="text" name="sort[' + data.record.ID + '].Index" style="width:40px" value="' + data.record.Index + '"/>';
                         },
                     },
-                    About: {
-                        title: '@Html.DisplayNameFor(c => c.About)',
-                        width: '3%',
-                        type: 'checkbox',
-                        values: { 'false': 'Không hiển thị', 'true': 'Hiển thị' },
-                    },
                     Status: {
                         title: '@Html.DisplayNameFor(c => c.Status)',
                         width: '3%',
@@ -121,24 +115,11 @@
                         type: 'checkbox',
                         values: { 'false': 'Không hiển thị', 'true': 'Hiển thị' },
                     },
-                    Hot: {
-                        title: '@Html.DisplayNameFor(c => c.Hot)',
-                        width: '3%',
-                        type: 'checkbox',
-                        values: { 'false': 'Không hiển thị', 'true': 'Hiển thị' },
-                    },
-                    New: {
-                        title: '@Html.DisplayNameFor(c => c.New)',
-                        width: '3%',
-                        type: 'checkbox',
-                        values: { 'false': 'Không hiển thị', 'true': 'Hiển thị' },
-                    },
-
 
                     '':
                     {
                         title: '',
-                        width: '2%',
+                        width: '1%',
                         sorting: false,
                         display: function(data) {
                             return '<button title="Edit" type="button" class="jtable-command-button jtable-edit-command-button" onclick="editRecord(' + data.record.ID + ')"><span>Edit</span></button>';

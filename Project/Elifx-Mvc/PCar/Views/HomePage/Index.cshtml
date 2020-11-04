@@ -3,339 +3,578 @@
 @using TeamplateHotel.Models
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Slider> sliders = CommentController.GetListSlider();
-
-    List<Product> products = CommentController.LstProducts();
 
     List<ShowObject> articles = CommentController.LstArticles();
 }
 
-<section data-aos="fade-up"  data-aos-duration="800">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+ 
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
 
-            @foreach (var slider in sliders.Select((value, index) => new { Value = value, Index = index }))
-            {
-                var active = slider.Index == 0 ? "active" : string.Empty;
-
-                <div class="item @active" id="img-sliderhome">
-                    <img src="@slider.Value.Image" alt="Banner"
-                         style="width: 100%;">
-
+<div class="owl-carousel slide-one-item">
+    <div class="site-section-cover overlay img-bg-section"
+         style="background-image: url('/Assets/Web/images/forex/anh-bia-1.png'); ">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-md-12 col-lg-7">
+                    <h1 data-aos="fade-up" data-aos-delay="">THAM GIA CỘNG ĐỒNG ELIFX VIỆT NAM</h1>
+                    <p class="mb-5 w-75 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Molestiae, cumque vitae animi.
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        <a href="#"
+                           class="btn btn-outline-white border-w-2 btn-md">THAM GIA</a>
+                    </p>
                 </div>
-
-            }
-
+            </div>
         </div>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-</section>
 
-
-<main>
-    <section class="product" data-aos="zoom-in-up"  data-aos-duration="900">
-        <div class="block-cars">
-            <div class="container">
-                <div class="icon-img">
-                    <img src="~/Assets/Web/img/icon-logo-vf.png" />
+    <div class="site-section-cover overlay img-bg-section"
+         style="background-image: url('/Assets/Web/images/forex/anh-bia.jpg'); ">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-md-12 col-lg-8">
+                    <h1 data-aos="fade-up" data-aos-delay="">THƯỞNG NẠP TIỀN LÊN ĐẾN 20% </h1>
+                    <p class="mb-5 w-75 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Est odit dolorum voluptates!
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        <a href="http://partner.elifx.com/introduce?iid=q2xri942&uid=211"
+                           class="btn btn-outline-white border-w-2 btn-md">ĐĂNG KÝ</a>
+                    </p>
                 </div>
-                <h1 class="title">VinFast Mỹ Đình - Đại lý VinFast Việt Nam</h1>
-                <div class="row">
-                    <div class="col-sm-12">
+            </div>
+        </div>
+    </div>
 
 
+</div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
 
-                        @foreach (var item in products)
-                        {
-                            <div class="col-sm-4 center">
-                                <a href="@item.MenuAlias/@item.ProductID/@item.Alias">
-                                    <h3>@item.MetaTitle</h3>
-                                </a>
-                                <div class="price">@item.Price.ToString("##,##")₫</div>
-                                <a href="@item.MenuAlias/@item.ProductID/@item.Alias" class="img-product">
-                                    <img src="@item.Image" alt="@item.MetaTitle">
-                                </a>
-
-                            </div>
-                        }
-
-
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+            async="">
+        {
+            "symbols": [
+                {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "Chỉ số S&P 500"
+                },
+                {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "Nasdaq 100"
+                },
+                {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR/USD"
+                },
+                {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "BTC/USD"
+                },
+                {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "ETH/USD"
+                }
+            ],
+                "colorTheme": "dark",
+                    "isTransparent": false,
+                        "displayMode": "compact",
+                            "locale": "vi_VN"
+        }
+    </script>
+</div>
+<!-- TradingView Widget END -->
+<div class="site-section" id="services-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-7 text-center">
+                <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
+                    <h1 id="title-ex">SÀN FOREX ELIFX (ELITE STRATEGIES)</h1>
+                    <p style="color:#ffffff; font-weight: 500;">
+                        Sàn Elifx là sàn môi giới tài chính có trụ sở đặt tại L1 256
+                        Rundle St Adelaide SA 5000, Australia. Được thành lập từ năm 2013. Đến nay sàn đã được gần 10 năm thành
+                        lập.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="">
+                <div class="block__35630">
+                    <div class="mb-3 img-sv">
+                        <img src="~/Assets/Web/images/./forex/hoa-hong.png" alt="Image Hoa Hong">
                     </div>
+                    <h3 class="mb-3 text-white">KHÔNG THU PHÍ HOA HỒNG GIAO DỊCH</h3>
+                    <p>
+                        Sàn Elifx không thu phí hoa hồng (phí com) tiết kiệm cho các nhà đầu tư giao dịch.
+                        Đối với phí qua đêm. Nhà đâu tư nạp 5000 usd được miễn phí 1 tháng, nhà đầu tư nạp 10000 usd được miễn
+                        phí 3 tháng.
+                    </p>
                 </div>
             </div>
-        </div>
-
-    </section>
-    <section class="service" >
-        <div class="quick-button " >
-            <ul class="container clearfix" data-aos="zoom-in-down" data-aos-duration="1200">
-                <li class="pricing-list"><a data-toggle="modal" data-target="#job">Yêu cầu<br>báo giá </a></li>
-                <li class="find-dealer"><a data-toggle="modal" data-target="#tragop">Mua xe<br>trả góp</a></li>
-                <li class="price-calculator"><a data-toggle="modal" data-target="#chiphi">Dự toán<br>chi phí</a></li>
-                <li class="test-drive"><a data-toggle="modal" data-target="#laithu">Đăng ký<br>lái thử</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <section data-aos="zoom-out-up" data-aos-duration="1400" >
-        <div class="section-why-choose-us hidden-xs-down">
-            <div class="container">
-                <h2 class="section-title">Tại sao nên mua xe tại Vinfast Mỹ Đình</h2>
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 reason">
-                                <div class="icon"><i class="fas fa-dollar-sign"></i></div>
-                                <div class="text">
-                                    <h6 class="name">GIÁ CẢ ƯU ĐÃI - GIAO XE SỚM</h6>
-                                    <div class="content">
-                                        Vinfast Mỹ Đình luôn cam kết mang lại mức giá ưu đãi nhất cho quý khách với
-                                        thời gian giao xe nhanh nhất trong 1 ngày.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 reason">
-                                <div class="icon"><i class="fas fa-tools"></i></div>
-                                <div class="text">
-                                    <h6 class="name">
-                                        <p>
-                                            BẢO HÀNH THEO TIÊU CHUẨN TOÀN QUỐC
-                                        </p>
-                                    </h6>
-                                    <div class="content">
-                                        Anh chị sẽ yên tâm khi mua xe tại Vinfast Mỹ Đình, vì chúng
-                                        tôi luôn bảo hành, bảo dưỡng và sửa chữa theo tiêu chuẩn chất lượng của
-                                        Vinfast trên toàn quốc.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 reason">
-                                <div class="icon"><i class="fas fa-award"></i></div>
-                                <div class="text">
-                                    <h6 class="name">KHUYẾN MÃI NHIỀU NHẤT</h6>
-                                    <div class="content">
-                                        Với hoạt động bán hàng sôi nổi, chúng tôi luôn cập nhật sớm
-                                        nhất các chương trình khuyến mãi của hãng và đại lý
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 reason">
-                                <div class="icon"><i class="fas fa-user-shield"></i></div>
-                                <div class="text">
-                                    <h6 class="name">TƯ VẤN TẬN TÌNH</h6>
-                                    <div class="content">
-                                        Đội ngũ tư vấn luôn sẵn lòng giúp Anh chị tìm được chiếc xe
-                                        ưng ý.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="block__35630">
+                    <div class="mb-3 img-sv">
+                        <img src="~/Assets/Web/images/./forex/san-qt.png" alt="Image San Quoc Te">
                     </div>
-                    <div class="col-md-5 guarantee">
-                        <img src="~/Assets/Web/img/Sedan-rear.jpg" alt="Tại sao nên mua xe tại Vinfast Mỹ Đình" />
+                    <h3 class="mb-3 text-white">SÀN QUỐC TẾ CỦA ÚC CÓ GIẤY PHÉP</h3>
+                    <p>
+                        Giấy phép của sàn Elifx :Được chứng nhận và kiểm soát bởi 2 giấy phép kiểm soát tài chính tối cao trên
+                        thế giới là ASIC của Úc và MSB của Mỹ đảm bảo vấn đề thanh khoản cho khách hàng.
+                        Uỷ ban Chứng khoán và Đầu tư Úc (ASIC) Giấp phép số: 001281476
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="block__35630">
+                    <div class="mb-3 img-sv">
+                        <img src="~/Assets/Web/images/./forex/thuong-nap.png" alt="Image Thuong Nap Tien">
                     </div>
+                    <h3 class="mb-3 text-white">THƯỞNG NẠP TIỀN</h3>
+                    <p>
+                        Nhà đầu tư nạp 1000 usd được thưởng 100 usd, 10000 usd là 2000 usd. Tiền thưởng này rút được khi nhà
+                        đầu tư giao dịch 03% số lót theo tiền thưởng. VD thưởng 100 usd thì giao dịch tối thiểu 30 lot.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section data-aos="fade-down"
-             data-aos-easing="linear"
-             data-aos-duration="1300">
-        <div class="container home-news">
-            <div class="new-title">
-                <img src="~/Assets/Web/img/title.png" />
-            </div>
-            <hr>
-            <div class="post clearfix">
-                <div class="col-md-12">
-                    @foreach (var item in articles)
-                    {
-                        <div class="col-md-4">
-                            <div class="item-article">
-                                <a href="">
-                                    <img src="@item.Image" class="" alt="">
-                                </a>
-                                <time><i class="far fa-calendar-alt"></i> &nbsp; @DateTime.Now</time>
-                                <h2>
-                                    <a title="" href="@item.MenuAlias/@item.ID/@item.Alias">
-                                        @item.Title
-                                    </a>
-                                </h2>
-                            </div>
-                        </div>
-                    }
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="">
+                <div class="block__35630">
+                    <div class="mb-3 img-sv">
+                        <img src="~/Assets/Web/images/./forex/ho-tro.png" alt="Image Ho Tro">
+                    </div>
+                    <h3 class="mb-3 text-white">Hỗ Trợ 24/7</h3>
+                    <p>Xử lý các vấn đề của nhà đầu tư một cách nhanh chóng và thuận tiện nhất.</p>
 
                 </div>
-
-
-
-
-
             </div>
-        </div>
-
-    </section>
-
-    <section class="form-datxe">
-        <form class="contact-form">
-            <div class="container ">
-                <div class="row">
-                    <h3 class="title-from text-center"> ĐẶT TRƯỚC XE Ô TÔ VINFAST</h3>
-                    <p class="sub-title text-center">
-                        Hãy là người đầu tiên sở hữu ô tô bản sắc Việt đẳng cấp quốc
-                        tế.
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="block__35630">
+                    <div class="mb-3 img-sv">
+                        <img src="~/Assets/Web/images/./forex/nap-rut.png" alt="Image Thuong Nap Rut">
+                    </div>
+                    <h3 class="mb-3 text-white">NẠP TIỀN VÀ RÚT TIỀN</h3>
+                    <p>
+                        Nạp rút nhanh chóng đơn giản tiền về trong ngày 24h,
+                        thường thì là vài tiếng đồng hồ thuận tiện cho nhà đầu tư không mất phí nạp rút.
                     </p>
 
                 </div>
             </div>
-
-            <div class="container"  data-aos="zoom-in"  data-aos-easing="linear"
-                 data-aos-duration="1400">
-                <div class="row">
-                    <div class="wrapper">
-                        <label class="check_point">
-                            <input type="radio" name="demo" id="demo1">
-                            <span for="demo1">Lux SA 2.0</span>
-                        </label>
-                        <label class="check_point">
-                            <input type="radio" name="demo" id="demo2">
-                            <span for="demo2">Lux A 2.0</span>
-                        </label>
-                        <label class="check_point">
-                            <input type="radio" name="demo" id="demo3">
-                            <span for="demo3">Fadil</span>
-                        </label>
-
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="block__35630">
+                    <div class="mb-3 img-sv">
+                        <img src="~/Assets/Web/images/./forex/bao-hiem.png" alt="Image Bao Hiem">
                     </div>
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                            <div class="info-bxe ">
-                                <label class="form-label js-form-required form-required" for="edit-fullname">
-                                    Họ và
-                                    Tên
-                                </label>
-                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
-                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
-                                       maxlength="128" required="required" aria-required="true">
+                    <h3 class="mb-3 text-white">BẢO HIỂM AN TOÀN GIAO DỊCH</h3>
+                    <p>
+                        Sàn Elifx (Elite Strategies) có bảo hiểm 5000 USD cho khách hàng cùng với WikiFX là tín hiệu tốt đáng
+                        tin cậy dành cho các nhà đầu tư.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section " style="background-color: black;" data-aos="fade-up" data-aos-delay="" id="about-section">
+    <div class="block__73694 mb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="~/Assets/Web/images/forex/nam2.jpg"
+                         style="width: 80%;box-shadow: 0 4px 4px 0 #F2D46B, 0 6px 10px 0 #F2D46B;" alt="Image About Us" />
+                    <br>
+                </div>
+
+                <div class="col-lg-5 mt-5 ">
+                    <h2 class=" mb-3" style="color: rgb(238, 202, 102)">MR.TRAN DINH NAM</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus id dignissimos nemo minus
+                        perspiciatis ullam itaque voluptas iure vero, nesciunt unde odit aspernatur distinctio, maiores facere
+                        officiis. Cum, esse, iusto?
+                    </p>
+
+                    <ul class="ul-check primary list-unstyled mt-5">
+                        <li>Lorem ipsum dolor.</li>
+                        <li>Quod, amet. Provident.</li>
+                        <li>Quo, adipisci, quis.</li>
+                        <li>Cumque perspiciatis, blanditiis?</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="comuny-section" id="communy-section">
+    <div class="comuny-section-background">
+        <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+            <div class=" row ">
+                <div class=" col-lg-12">
+                    <div class="comuny-header mt-5 " style="text-align: center">
+                        <div class="block-heading-1">
+                            <h2 id="title-ex"> THAM GIA CỘNG ĐỒNG ĐẦU TƯ VIP CÙNG SÀN ELIFX TẠI ĐÂY </h2>
+                        </div>
+                        <p>Cơ hội học tập về kiến thức giao dịch đầu tư hoàn toàn miễn phí đạt lợi nhuận 5-15%/tháng</p>
+                        <p class="mt-5">Quyền lợi khi tham gia nhóm VIP đầu tư</p>
+                    </div>
+                    <div class="comuny-body mt-3">
+                        <div class="container">
+                            <div class="row comuny-response">
+                                <div class="col-lg=5" style="text-align: left">
+                                    <div class="comuny-item-1">
+                                        <img src="~/Assets/Web/images/forex/1.png" style="width:45px;height: 45px;" alt="Image Community" />
+                                        <span>Học phương pháp giao dịch tỷ lệ win 70%</span>
+                                    </div>
+                                    <div class="comuny-item-1">
+                                        <img src="~/Assets/Web/images/forex/2.png" style="width:45px;height: 45px;" alt="Image Community" />
+                                        <span>Học phương pháp quản lý vốn tốt nhất</span>
+                                    </div>
+                                    <div class="comuny-item-1">
+                                        <img src="~/Assets/Web/images/forex/3.png" style="width:45px;height: 45px;" alt="Image Community" />
+                                        <span>Nghệ thuật kiểm soát tâm lý giao dịch</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-1" style="text-align: left"></div>
+
+                                <div class="col-lg=5" style="text-align: left">
+                                    <div class="comuny-item-1">
+                                        <img src="~/Assets/Web/images/forex/6.png" style="width:45px;height: 45px;"  alt="Image Community"/>
+                                        <span>Nhận tín hiệu giao dịch 5-10 tín hiệu/ngày</span>
+                                    </div>
+                                    <div class="comuny-item-1">
+                                        <img src="~/Assets/Web/images/forex/2.png" style="width:45px;height: 45px;" alt="Image Community"/>
+                                        <span>Tham gia các buổi hội thảo, khóa học hoàn toàn miễn phí</span>
+                                    </div>
+                                    <div class="comuny-item-1">
+                                        <img src="~/Assets/Web/images/forex/4.png" style="width:45px;height: 45px;" alt="Image Community"/>
+                                        <span>Giao lưu với các thành viên trong cộng đồng </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="info-bxe ">
-                                <label class="form-label form-required">Tỉnh Thành</label>
-                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
-                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
-                                       maxlength="128" required="required" aria-required="true">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="info-bxe ">
-                                <label class="form-label form-required">Quận Huyện</label>
-
-                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
-                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
-                                       maxlength="128" required="required" aria-required="true">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                            <div class="info-bxe ">
-                                <label class="form-label " for="edit-fullname">Địa Chỉ</label>
-                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
-                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
-                                       maxlength="128" required="required" aria-required="true">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="info-bxe ">
-                                <label class="form-label form-required">Thư Điện Tử</label>
-                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
-                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
-                                       maxlength="128" required="required" aria-required="true">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="info-bxe ">
-                                <label class="form-label form-required">Số Điện Thoại</label>
-
-                                <input class="form-input form-text required" data-drupal-selector="edit-fullname"
-                                       type="text" id="edit-fullname" name="fullname" value="" size="60"
-                                       maxlength="128" required="required" aria-required="true">
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <br />
-
-                    <div class="center" style="margin-top: 15px;">
-                        <img src="~/Assets/Web/img/Untitled.png" class="center-img" height="55" />
-                        <br /> <br />
-
-                        <input class="btn-black button js-form-submit form-submit"
-                               data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op"
-                               value="Gửi Tin Nhắn">
-
                     </div>
                 </div>
             </div>
-        </form>
-        <div class="img way-animate animated fadeIn" data-animate="fadeIn" style="opacity: 1; animation-delay: 0s;">
-            <figure style="background-image: url('https://oto.vinfast.vn/sites/default/files/2019-03/SEDAN_side_1920.jpg') "></figure>
+            <br />
+            <p class="text-center">
+                <a href="http://partner.elifx.com/introduce?iid=q2xri942&uid=211" class="btn btn-primary btn-md text-white" style="background-color: #bb9645;border-color : #bb9645">Đăng ký tài khoản</a>
+            </p>
         </div>
-    </section>
-</main>
+    </div>
+</div>
 
-@RenderPage("../Shared/Modal/_BaoGia.cshtml")
+<section class="site-section" id="pricing-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center text-center">
+            <div class="col-md-7">
+                <div class="block-heading-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                    <h2 style="color : #f2d46b">03 BƯỚC ĐỂ THAM GIA CỘNG ĐỒNG ELIFX VIỆT NAM</h2>
+                    <p> Cơ hội để thành công bền vững trong thị trường đầu tư nghìn tỷ USD..</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                <div class="pricing">
+                    <h4 class="text-center text-gold">ĐĂNG KÝ TÀI KHOẢN</h4>
 
-@RenderPage("../Shared/Modal/_ChiPhi.cshtml")
+                    <ul class="list-unstyled ul-check success mb-5 mt-5">
 
-@RenderPage("../Shared/Modal/_LaiThu.cshtml")
+                        <li>Tạo tài khoản giao dịch trên sàn Elifx chỉ trong vòng 5 phút</li>
+                        <li>Giao dịch trên nền tảng MT4 uy tín nhất hiện nay</li>
 
-@RenderPage("../Shared/Modal/_Tragop.cshtml")
+                    </ul>
+                    <p class="text-center">
+                        <a href="#" class="btn btn-secondary btn-md">ĐĂNG KÝ</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing">
+                    <h4 class="text-center text-gold">NHÓM TÍN HIỆU MIỄN PHÍ</h4>
+
+                    <ul class="list-unstyled ul-check success mb-5  mt-5">
+
+                        <li>Tín hiệu hàng đầu từ các chuyên gia</li>
+                        <li>Tỉ lệ chiến thắng hơn 70%</li>
+                        <li>Cộng đồng hỗ trợ</li>
+
+                    </ul>
+
+                    <p class="text-center">
+                        <a href="#" class="btn btn-primary btn-md text-white"
+                           style="background-color: #bb9645;border-color : #bb9645">THAM GIA</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing">
+                    <h4 class="text-center text-gold">CỘNG ĐỒNG VIP ELIFX</h4>
+
+                    <ul class="list-unstyled ul-check success mb-5 mt-5">
+
+                        <li>Học phương pháp giao dịch thực chiến tự giao dịch tỷ lệ win 70%</li>
+                        <li>Nhận tín hiệu VIP 5-10 tín hiệu mỗi ngày</li>
+                        <li>Kết nối với các nhà đầu tư trong nhóm thảo luận giao dịch</li>
+
+                    </ul>
+                    <p class="text-center">
+                        <a href="#" class="btn btn-secondary btn-md">THAM GIA</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="SECTION109" class="ladi-section">
+    <div class="ladi-section-background"></div>
+    <div class="ladi-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+        <div id="HEADLINE112" class="ladi-element" style="text-align: center">
+            <div class="block-heading-1">
+                <h2 id="title-ex">
+                    LÀM THẾ NÀO ĐỂ BẠN
+                    <br>CÓ THỂ THÀNH CÔNG TRONG THỊ TRƯỜNG FOREX<br>
+                </h2>
+            </div>
+        </div>
+        <div id="BOX113" class="ladi-element">
+            <div class="ladi-box"></div>
+        </div>
+        <div id="PARAGRAPH114" class="ladi-element">
+            <p class="ladi-paragraph">Tất cả sẽ được tiết lộ tại buổi chia sẻ:</p>
+        </div>
+        <div id="HEADLINE115" class="ladi-element">
+            <h3 class="ladi-headline">TỌA ĐÀM FOREX 2020: Khóa học forex thực chiến 2020<br></h3>
+        </div>
+        <div id="PARAGRAPH116" class="ladi-element">
+            <p class="ladi-paragraph">
+                Elifxtrading.com tổ chức buổi hội thảo đặc biệt dành cho các nhà đầu tư đang tìm hiểu thị
+                trường Forex với các nội dung:
+                <br>1. Forex là gì? Tại sao nên chọn kênh đầu tư này?
+                <br>2. Phương pháp quản lý vốn và tâm lý trong giao dịch?
+                <br>3. Nguyên tắc xác định hỗ trợ kháng cự trọng forex
+                <br>4. Một số phương pháp đánh mang lại lợi nhuận tối ưu 20%/tháng
+                <br>5. Cơ hội và thách thức trong mùa dịch Covid 19,
+                <br>…
+                <br><br>Chương trình của Elifxtrading.com tổ chức cam kết bạn sẽ nhận được nhiều kiến thức giá trị để bạn tự tin tham
+                gia vào thị trường đầy tiềm năng này.<br>
+            </p>
+        </div><a href="tel:0338881509" id="BUTTON119" class="ladi-element">
+            <div class="ladi-button">
+                <div class="ladi-button-background"></div>
+                <div id="BUTTON_TEXT119" class="ladi-element">
+                    <p class="ladi-headline">LIÊN HỆ TƯ VẤN</p>
+                </div>
+            </div>
+        </a>
+        <div data-action="true" id="BUTTON121" class="ladi-element">
+            <div class="ladi-button">
+                <div class="ladi-button-background"></div>
+                <div id="BUTTON_TEXT121" class="ladi-element">
+                    <p class="ladi-headline">ĐĂNG KÝ NGAY</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="SECTION123" class="ladi-section">
+    <div class="ladi-section-background"></div>
+    <div class="ladi-overlay"></div>
+    <div class="ladi-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+        <div id="HEADLINE124" class="ladi-element" style="text-align: center">
+            <div class="block-heading-1">
+                <h2 id="title-ex">NHỮNG GIÁ TRỊ MÀ BẠN SẼ ĐƯỢC HỌC TỪ BUỔI TỌA ĐÀM NÀY</h2>
+            </div>
+        </div>
+        <div id="PARAGRAPH125" class="ladi-element">
+            <p class="ladi-paragraph">Chương trình hoàn toàn miễn phí được tổ chức bởi Elifx Việt Nam trong năm 2020</p>
+        </div>
+        <div id="GROUP128" class="ladi-element">
+            <div class="ladi-group">
+                <div id="IMAGE126" class="ladi-element">
+                    <div class="ladi-image">
+                        <div class="ladi-image-background"></div>
+                    </div>
+                </div>
+                <div id="PARAGRAPH127" class="ladi-element">
+                    <p class="ladi-paragraph">Cơ hội đầu tư vàng trong năm 2020</p>
+                </div>
+            </div>
+        </div>
+        <div id="GROUP129" class="ladi-element">
+            <div class="ladi-group">
+                <div id="IMAGE130" class="ladi-element">
+                    <div class="ladi-image">
+                        <div class="ladi-image-background"></div>
+                    </div>
+                </div>
+                <div id="PARAGRAPH131" class="ladi-element">
+                    <p class="ladi-paragraph">Tổng quan thị trường Forex</p>
+                </div>
+            </div>
+        </div>
+        <div id="GROUP132" class="ladi-element">
+            <div class="ladi-group">
+                <div id="IMAGE133" class="ladi-element">
+                    <div class="ladi-image">
+                        <div class="ladi-image-background"></div>
+                    </div>
+                </div>
+                <div id="PARAGRAPH134" class="ladi-element">
+                    <p class="ladi-paragraph">Những Tiềm năng to lớn của thị trường ngoại hối hiện nay</p>
+                </div>
+            </div>
+        </div>
+        <div id="GROUP135" class="ladi-element">
+            <div class="ladi-group">
+                <div id="IMAGE136" class="ladi-element">
+                    <div class="ladi-image">
+                        <div class="ladi-image-background"></div>
+                    </div>
+                </div>
+                <div id="PARAGRAPH137" class="ladi-element">
+                    <p class="ladi-paragraph">Cách thức tham gia thị trường forex</p>
+                </div>
+            </div>
+        </div>
+        <div id="GROUP138" class="ladi-element">
+            <div class="ladi-group">
+                <div id="IMAGE139" class="ladi-element">
+                    <div class="ladi-image">
+                        <div class="ladi-image-background"></div>
+                    </div>
+                </div>
+                <div id="PARAGRAPH140" class="ladi-element">
+                    <p class="ladi-paragraph">Gặp gỡ các nhà đầu tư chuyên nghiệp thành công</p>
+                </div>
+            </div>
+        </div>
+        <div id="GROUP141" class="ladi-element">
+            <div class="ladi-group">
+                <div id="IMAGE142" class="ladi-element">
+                    <div class="ladi-image">
+                        <div class="ladi-image-background"></div>
+                    </div>
+                </div>
+                <div id="PARAGRAPH143" class="ladi-element">
+                    <p class="ladi-paragraph">Nhận bộ công cụ hệ thống giao dịch forex mới nhất 2020</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section" id="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                <div class="block-heading-1">
+                    <h2 id="title-ex">YÊU CẦU TƯ VẤN</h2>
+                    <p class="ladi-paragraph">Nhận tư vấn từ đội ngũ hỗ trợ chuyên nghiệp của chúng tôi</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <form action="Contact/Send" method="post">
+                    <div class="form-group row">
+                        <div class="col-md-6 mb-4 mb-lg-0">
+                            <input type="text" class="form-control" name="FirstName" placeholder="Họ">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="LastName" placeholder="Tên">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="Email" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="Phone" placeholder="Số điện thoại">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <textarea name="Message" id="" class="form-control" placeholder="Lời nhắn" cols="10" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6 ml-auto">
+                            <input type="submit" class="btn btn-block text-white py-3 px-5" value="Gửi yêu cầu"
+                                   style="background-color: #ae8b41;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 ml-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="text-align: center">
+                <h2 class="text-gold">Zalo</h2>
+                <div>
+                    <img src="~/Assets/Web/images/forex/QR.jpg" style="width:100%" alt="Image Zalo Info"/>
+                </div>
+                <!-- <p><a href="#" class="btn btn-primary text-white">Get Started</a></p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section" id="blog-section" style="background: #00000029;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <div class="block-heading-1 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                    <h2 id="title-ex">Bài Viết Nổi Bật</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var item in articles.Take(3))
+            {
+
+                <div class="col-md-4 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="">
+                    <div>
+                        <a href="/@item.MenuAlias/@item.ID/@item.Alias" class="mb-4 d-block">
+                            <img src="@item.Image" alt="Image" class="img-fluid rounded" alt="@item.Title">
+                        </a>
+                        <h5>
+                            <a href="/@item.MenuAlias/@item.ID/@item.Alias" style="color: #f2d462">@item.Title</a>
+                        </h5>
+
+                    </div>
+                </div>
+
+            }
 
 
-
-
-
+        </div>
+    </div>
+</div>
 
 @section scripts
 {
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.check_point').click(function () {
-                $('.check_point').removeClass('active');
-                $(this).toggleClass('active')
-            })
-        })
-    </script>
+
 
 }

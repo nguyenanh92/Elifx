@@ -19,7 +19,7 @@ namespace PCar.Models
 
         [DisplayName("Tiêu đề bài viết")]
         [Required(ErrorMessage = "Vui lòng nhập tiêu đề bài viết")]
-        [MaxLength(250, ErrorMessage = "Tối đa 250 ký tự")]
+        [MaxLength(450, ErrorMessage = "Tối đa 450 ký tự")]
         public string Title { get; set; }
 
         [DisplayName("Alias")]
@@ -69,6 +69,6 @@ namespace PCar.Models
  
          
 
-        public DateTime DateTime { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

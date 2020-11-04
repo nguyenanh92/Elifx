@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Thông Báo !";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="site-section" id="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container posts">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="aic-titel" style="color: #f2d46b !important">Thông Báo</h1>
+                            <p style=" text-align: justify;color: #f2d46b !important">@Html.Raw(ViewBag.Messages)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

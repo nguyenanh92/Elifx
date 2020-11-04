@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using DataLibrary.Common;
 using DataLibrary.Config;
 using DataLibrary.Database;
 using DataLibrary.Utility;
@@ -61,7 +62,7 @@ namespace PCar.Areas.Administrator.Controllers
                         Index = a.a.Index,
                         Status = a.a.Status,
                         Home = a.a.Home,
-            
+
                     }).OrderByDescending(a => a.ID).Skip(jtStartIndex).Take(jtPageSize).ToList();
                     //Return result to jTable
                     return Json(new { Result = "OK", Records = records, TotalRecordCount = listArticle.Count() });
@@ -93,9 +94,13 @@ namespace PCar.Areas.Administrator.Controllers
                 }
                 try
                 {
+                    var sess = (UserLogin)Session[CommonConstants.USER_SESSION];
+
+
                     var article = new Article
                     {
                         MenuID = model.MenuID,
+                        AuthorID = sess.ID,
                         Title = model.Title,
                         Alias = model.Alias,
                         Image = model.Image,
@@ -106,7 +111,7 @@ namespace PCar.Areas.Administrator.Controllers
                         MetaDescription = model.Description,
                         Status = model.Status,
                         Home = model.Home,
-   
+
                     };
 
                     db.Articles.InsertOnSubmit(article);
@@ -154,7 +159,7 @@ namespace PCar.Areas.Administrator.Controllers
                     MetaDescription = detailArticle.MetaDescription,
                     Status = detailArticle.Status,
                     Home = detailArticle.Home,
-               
+                    CreateDate = DateTime.Now
 
                 };
                 LoadData();
@@ -168,8 +173,7 @@ namespace PCar.Areas.Administrator.Controllers
         {
             using (var db = new MyDbDataContext())
             {
-                if (ModelState.IsValid)
-                {
+                
                     if (string.IsNullOrEmpty(model.Alias))
                     {
                         model.Alias = StringHelper.ConvertToAlias(model.Alias);
@@ -185,13 +189,10 @@ namespace PCar.Areas.Administrator.Controllers
                             article.Image = model.Image;
                             article.Description = model.Description;
                             article.Content = model.Content;
-                            article.MetaTitle = string.IsNullOrEmpty(model.MetaTitle) ? model.Title : model.MetaTitle;
-                            article.MetaDescription = string.IsNullOrEmpty(model.MetaDescription)
-                                ? model.Title
-                                : model.MetaDescription;
+                            article.MetaTitle =  model.MetaTitle;
+                            article.MetaDescription =  model.MetaDescription;
                             article.Status = model.Status;
-                            article.Home = model.Home;
-          
+                            article.Home = model.Home; 
 
                             db.SubmitChanges();
                             TempData["Messages"] = "Cập nhật bài viết thành công";
@@ -204,9 +205,8 @@ namespace PCar.Areas.Administrator.Controllers
                         ViewBag.Messages = "Lỗi: " + exception.Message;
                         return View();
                     }
-                }
-                LoadData();
-                return View(model);
+                    ViewBag.Messages = "Lỗi: ";
+                    return View();
             }
         }
 

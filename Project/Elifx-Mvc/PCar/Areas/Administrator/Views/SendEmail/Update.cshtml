@@ -1,0 +1,105 @@
+﻿@model  PCar.Areas.Administrator.Models.ESendEmail
+@{
+    ViewBag.Title = "Chỉnh sửa mẫu gửi email ";
+
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section styles
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Assets/Admin/plugins/summernote/summernote-bs4.css">
+}
+<div class="container">
+
+    <div class="card card-secondary">
+        <div class="card-header">
+            <h3 class="card-title">@ViewBag.Title</h3>
+        </div>
+        <!-- /.card-header --> 
+        <div class="card-body">
+            @Html.ValidationSummary(true)
+            @using (Html.BeginForm("Update", "SendEmail", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.HiddenFor(a=>a.ID)
+                @Html.HiddenFor(a=>a.Type)
+                <div class="control-group">
+                    <label class="control-label" for="Title">Tiêu đề thông báo<span class="asterisk">*</span></label>
+                    <div class="controls">
+                        @Html.TextBoxFor(c => c.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(c => c.Title)
+                    </div>
+                </div>
+                <br/>
+                <div class="control-group">
+                    <label class="control-label" for="Content">Nội dung thông báo<span class="asterisk">*</span></label>
+                    <div class="controls">
+                        <p>
+                            <span class="error-login">@Html.ValidationMessageFor(a => a.Content)</span>
+                        </p>
+                        @Html.TextAreaFor(c => c.Content, new { @class = "full-ckeditor" , @id = "editor-content" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="Content">Lời nhắn khi gửi thành công<span class="asterisk">*</span></label>
+                    <div class="controls">
+                        <p>
+                            <span class="error-login">@Html.ValidationMessageFor(a => a.Success)</span>
+                        </p>
+                        @Html.TextAreaFor(c => c.Success, new { @class = "full-ckeditor" , @id = "editor-des" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="Content">Lời nhắn khi gửi thất bại<span class="asterisk">*</span></label>
+                    <div class="controls">
+                        <p>
+                            <span class="error-login">@Html.ValidationMessageFor(a => a.Error)</span>
+                        </p>
+                        @Html.TextAreaFor(c => c.Error, new { @class = "full-ckeditor" , @id = "editor-dess" })
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <input type="submit" value="Submit" class="btn btn-primary" /> 
+                    <a href="@Url.Action("Index", "SendEmail")" class="btn">Cancel</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <!-- Summernote -->
+    <script src="~/Assets/Admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(function () {
+            //Add text editor
+            $('#editor-des').summernote({
+                height: 150,   //set editable area's height
+
+            });
+            $('#editor-dess').summernote({
+                height: 150,   //set editable area's height
+
+            });
+            $('#editor-content').summernote({
+                height: 450,   //set editable area's height
+
+            });
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            AutoAlias('Title', 'Alias');
+            bindUl();
+
+        });
+    </script>
+
+}

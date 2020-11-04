@@ -1,0 +1,112 @@
+﻿@model  PCar.Areas.Administrator.Models.EUser
+@{
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section styles
+{
+
+    <!-- DataTables -->
+    @*<link rel="stylesheet" href="~/Assets/Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css">*@
+    <link href="~/Scripts/jquery-ui-1.11.0/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/metro/lightgray/jtable.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/jqueryui/jtable_jqueryui.css" rel="stylesheet" />
+
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-edit"></i>
+                    Quản lý User
+                </h3>
+            </div>
+            <div class="card-body pad table-responsive">
+                <div id="jtable-main-container"></div>
+
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.col -->
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#jtable-main-container').jtable({
+                title: '@ViewBag.Title',
+                paging: true, //Enable paging
+                pageSize: 20, //Set page size (default: 10)
+                sorting: true, //Enable sorting
+                selecting: true, //Enable selecting
+                multiselect: true, //Allow multiple selecting
+                selectingCheckboxes: true, //Show checkboxes on first column
+                columnResizable: false, //Actually, no need to set true since it's default
+                columnSelectable: true, //Actually, no need to set true since it's default
+                saveUserPreferences: false, //Actually, no need to set true since it's default
+
+
+                actions: {
+                    listAction: '@Url.Action("List", "User")',
+                    createAction: '@Url.Action("Create", "User")',
+                    updateAction: '@Url.Action("Edit", "User")',
+                    deleteAction: '@Url.Action("Delete", "User")',
+                },
+                fields: {
+                    ID: {
+                        key: true,
+                        create: false,
+                        edit: false,
+                        list: false
+                    },
+                    UserName: {
+                        title: '@Html.DisplayNameFor(c => c.UserName)',
+                        width: '10%',
+                        inputClass: 'full-width',
+                    },
+                    Password: {
+                        title: '@Html.DisplayNameFor(c => c.Password)',
+                        width: '10%',
+                        inputClass: 'full-width',
+                        list: false,
+                        type: 'password'
+                    },
+                    FullName: {
+                        title: '@Html.DisplayNameFor(c => c.FullName)',
+                        width: '10%',
+                        inputClass: 'full-width',
+                    },
+
+                    Email: {
+                        title: '@Html.DisplayNameFor(c => c.Email)',
+                        width: '10%',
+                        inputClass: 'full-width',
+                    },
+                    Status: {
+                        title: '@Html.DisplayNameFor(c => c.Status)',
+                        width: '8%',
+                        type: 'checkbox',
+                        values: { 'false': 'Không', 'true': 'Có' },
+                        defaultValue: 'true'
+                    },
+                },
+                deleteConfirmation: function(data) {
+                    data.deleteConfirmMessage = 'Bạn có chắc chắn xóa người dùng này không ?';
+                },
+
+            });
+            //Load data
+            $('#jtable-main-container').jtable('load');
+
+        });
+    </script>
+
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.js"></script>
+    <script src="~/Scripts/jtable/jquery.jtable.js"></script>
+
+}

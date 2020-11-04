@@ -74,11 +74,11 @@
                     edit: false,
                     list: false
                 },
-                Name: {
+                CompanyName: {
                     title: 'Tên Company',
                     width: '13%',
                     display: function (data) {
-                        return '<a href="/admin/Company/Update/' + data.record.ID + '">' + data.record.Name + '</a>';
+                        return '<a href="/admin/Company/Update/' + data.record.ID + '">' + data.record.CompanyName + '</a>';
                     }
                 },
                 Logo: {
@@ -89,19 +89,22 @@
                     },
                     inputClass: 'upload'
                 },
-                Image: {
-                    title: 'Ảnh đại diện',
-                    width: '8%',
-                    display: function (data) {
-                        return '<img src="' + data.record.Image + '" width="60px" height="60px"/>';
-                    },
-                    inputClass: 'upload'
-                },
-                Email: {
+                //Image: {
+                //    title: 'Ảnh đại diện',
+                //    width: '8%',
+                //    display: function (data) {
+                //        return '<img src="' + data.record.Image + '" width="60px" height="60px"/>';
+                //    },
+                //    inputClass: 'upload'
+                //},
+                MetaTitle: {
+                    title: 'MetaTitle',
+                    width: '13%',
+                },     Email: {
                     title: 'Địa chỉ email',
                     width: '13%',
                 },
-                Tel: {
+                Phone: {
                     title: 'Số điện thoại',
                     width: '13%',
                 },

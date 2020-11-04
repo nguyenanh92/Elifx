@@ -6,9 +6,7 @@ namespace DataLibrary.Config
     public class TypeSendEmail
     {
         public static int Contact = 1;
-        public static int Register = 2;
-        public static int Reservation = 3;
-        public static int Order = 4;
+ 
 
 
         public static List<ListItem> ListTypeSendEmail()
@@ -19,22 +17,7 @@ namespace DataLibrary.Config
                 {
                     Value = Contact.ToString(),
                     Text = "Liên hệ",
-                },
-                new ListItem
-                {
-                    Value = Register.ToString(),
-                    Text = "Đăng ký",
-                },
-                 new ListItem
-                {
-                    Value = Reservation.ToString(),
-                    Text = "Đặt bàn",
-                },
-                 new ListItem
-                 {
-                     Value = Order.ToString(),
-                     Text = "Đặt món",
-                 },
+                } 
             };
 
             return listTypeSendEmail;

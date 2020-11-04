@@ -44,7 +44,7 @@ namespace PCar.Controllers
                 return menufooter;
             }
         }
- 
+
 
         public static List<Article> GetArticles(int menuId)
         {
@@ -79,8 +79,8 @@ namespace PCar.Controllers
                             Index = a.Index,
                             Image = a.Image,
                             Description = a.Description,
-                        //Content = a.Content
-                    }).OrderByDescending(a => a.ID).ToList();
+                            //Content = a.Content
+                        }).OrderByDescending(a => a.ID).ToList();
                 return aList;
             }
         }
@@ -92,12 +92,15 @@ namespace PCar.Controllers
             {
                 Article article = db.Articles.FirstOrDefault(a => a.ID == id && a.Status) ?? new Article();
                 List<Article> articles = db.Articles.Where(a => a.MenuID == article.MenuID && a.Status && a.ID != article.ID).OrderBy(a => a.Index).ToList();
+                var user = db.Users.FirstOrDefault(a => a.ID == article.AuthorID);
                 foreach (var item in articles)
                 {
-                    item.MenuAlias = article.MenuAlias;
+                    item.MenuAlias = article.Menu.Alias;
+                    item.Author = user.FullName;
                 }
                 DetailArticle detailArticle = new DetailArticle()
                 {
+                    Author = user.FullName,
                     Article = article,
                     Articles = articles
                 };

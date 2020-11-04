@@ -21,9 +21,11 @@ namespace PCar.Controllers
             Company hotel = CommentController.DetailWebsite();
             ViewBag.MetaTitle = hotel.MetaTitle;
             ViewBag.MetaDesctiption = hotel.MetaDescription;
+            ViewBag.OgImage = hotel.Image;
 
             if (aliasMenuSub.ToString() == "System.Object")
             {
+                ViewBag.HomePage = true;
                 return View("Index");
             }
 
@@ -31,7 +33,8 @@ namespace PCar.Controllers
             Menu menu = db.Menus.FirstOrDefault(a => a.Alias == aliasMenuSub.ToString());
             if (menu == null)
             {
-                return View("404");
+                ViewBag.HomePage = true;
+                return View("Index");
             }
 
             //Seo
@@ -45,11 +48,10 @@ namespace PCar.Controllers
                     goto Trangbaiviet;
                 case SystemMenuType.About:
                     return View("About");
-                case SystemMenuType.Contact:
-
-                    return View("Contact");
-
+                //case SystemMenuType.Contact:
+                //    return View("Contact");
                 default:
+                    ViewBag.HomePage = true;
                     return View("Index");
             }
 

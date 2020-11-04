@@ -30,6 +30,9 @@ namespace DataLibrary.Database
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertArticle(Article instance);
+    partial void UpdateArticle(Article instance);
+    partial void DeleteArticle(Article instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
@@ -45,6 +48,9 @@ namespace DataLibrary.Database
     partial void InsertMenu(Menu instance);
     partial void UpdateMenu(Menu instance);
     partial void DeleteMenu(Menu instance);
+    partial void InsertSendEmail(SendEmail instance);
+    partial void UpdateSendEmail(SendEmail instance);
+    partial void DeleteSendEmail(SendEmail instance);
     #endregion
 		
 		public MyDbDataContext() : 
@@ -124,11 +130,21 @@ namespace DataLibrary.Database
 				return this.GetTable<Menu>();
 			}
 		}
+		
+		public System.Data.Linq.Table<SendEmail> SendEmails
+		{
+			get
+			{
+				return this.GetTable<SendEmail>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Article")]
-	public partial class Article
+	public partial class Article : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
@@ -160,11 +176,54 @@ namespace DataLibrary.Database
 		
 		private System.Nullable<System.DateTime> _ModifyDate;
 		
+		private EntityRef<User> _User;
+		
+		private EntityRef<Menu> _Menu;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMenuIDChanging(int value);
+    partial void OnMenuIDChanged();
+    partial void OnAuthorIDChanging(int value);
+    partial void OnAuthorIDChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnAliasChanging(string value);
+    partial void OnAliasChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnContentChanging(string value);
+    partial void OnContentChanged();
+    partial void OnMetaTitleChanging(string value);
+    partial void OnMetaTitleChanged();
+    partial void OnMetaDescriptionChanging(string value);
+    partial void OnMetaDescriptionChanged();
+    partial void OnImageChanging(string value);
+    partial void OnImageChanged();
+    partial void OnStatusChanging(bool value);
+    partial void OnStatusChanged();
+    partial void OnHomeChanging(bool value);
+    partial void OnHomeChanged();
+    partial void OnIndexChanging(int value);
+    partial void OnIndexChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnModifyDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnModifyDateChanged();
+    #endregion
+		
 		public Article()
 		{
+			this._User = default(EntityRef<User>);
+			this._Menu = default(EntityRef<Menu>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -175,7 +234,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._ID != value))
 				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
 					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
 				}
 			}
 		}
@@ -191,7 +254,15 @@ namespace DataLibrary.Database
 			{
 				if ((this._MenuID != value))
 				{
+					if (this._Menu.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMenuIDChanging(value);
+					this.SendPropertyChanging();
 					this._MenuID = value;
+					this.SendPropertyChanged("MenuID");
+					this.OnMenuIDChanged();
 				}
 			}
 		}
@@ -207,12 +278,20 @@ namespace DataLibrary.Database
 			{
 				if ((this._AuthorID != value))
 				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAuthorIDChanging(value);
+					this.SendPropertyChanging();
 					this._AuthorID = value;
+					this.SendPropertyChanged("AuthorID");
+					this.OnAuthorIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(450) NOT NULL", CanBeNull=false)]
 		public string Title
 		{
 			get
@@ -223,7 +302,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Title != value))
 				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
 					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
 				}
 			}
 		}
@@ -239,7 +322,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Alias != value))
 				{
+					this.OnAliasChanging(value);
+					this.SendPropertyChanging();
 					this._Alias = value;
+					this.SendPropertyChanged("Alias");
+					this.OnAliasChanged();
 				}
 			}
 		}
@@ -255,7 +342,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Description != value))
 				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
 					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
@@ -271,7 +362,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Content != value))
 				{
+					this.OnContentChanging(value);
+					this.SendPropertyChanging();
 					this._Content = value;
+					this.SendPropertyChanged("Content");
+					this.OnContentChanged();
 				}
 			}
 		}
@@ -287,7 +382,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._MetaTitle != value))
 				{
+					this.OnMetaTitleChanging(value);
+					this.SendPropertyChanging();
 					this._MetaTitle = value;
+					this.SendPropertyChanged("MetaTitle");
+					this.OnMetaTitleChanged();
 				}
 			}
 		}
@@ -303,7 +402,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._MetaDescription != value))
 				{
+					this.OnMetaDescriptionChanging(value);
+					this.SendPropertyChanging();
 					this._MetaDescription = value;
+					this.SendPropertyChanged("MetaDescription");
+					this.OnMetaDescriptionChanged();
 				}
 			}
 		}
@@ -319,7 +422,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Image != value))
 				{
+					this.OnImageChanging(value);
+					this.SendPropertyChanging();
 					this._Image = value;
+					this.SendPropertyChanged("Image");
+					this.OnImageChanged();
 				}
 			}
 		}
@@ -335,7 +442,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Status != value))
 				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
 					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
@@ -351,7 +462,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Home != value))
 				{
+					this.OnHomeChanging(value);
+					this.SendPropertyChanging();
 					this._Home = value;
+					this.SendPropertyChanged("Home");
+					this.OnHomeChanged();
 				}
 			}
 		}
@@ -367,7 +482,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._Index != value))
 				{
+					this.OnIndexChanging(value);
+					this.SendPropertyChanging();
 					this._Index = value;
+					this.SendPropertyChanged("Index");
+					this.OnIndexChanged();
 				}
 			}
 		}
@@ -383,7 +502,11 @@ namespace DataLibrary.Database
 			{
 				if ((this._CreateDate != value))
 				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
 					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
 				}
 			}
 		}
@@ -399,8 +522,100 @@ namespace DataLibrary.Database
 			{
 				if ((this._ModifyDate != value))
 				{
+					this.OnModifyDateChanging(value);
+					this.SendPropertyChanging();
 					this._ModifyDate = value;
+					this.SendPropertyChanged("ModifyDate");
+					this.OnModifyDateChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Article", Storage="_User", ThisKey="AuthorID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Articles.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Articles.Add(this);
+						this._AuthorID = value.ID;
+					}
+					else
+					{
+						this._AuthorID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Menu_Article", Storage="_Menu", ThisKey="MenuID", OtherKey="ID", IsForeignKey=true)]
+		public Menu Menu
+		{
+			get
+			{
+				return this._Menu.Entity;
+			}
+			set
+			{
+				Menu previousValue = this._Menu.Entity;
+				if (((previousValue != value) 
+							|| (this._Menu.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Menu.Entity = null;
+						previousValue.Articles.Remove(this);
+					}
+					this._Menu.Entity = value;
+					if ((value != null))
+					{
+						value.Articles.Add(this);
+						this._MenuID = value.ID;
+					}
+					else
+					{
+						this._MenuID = default(int);
+					}
+					this.SendPropertyChanged("Menu");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -421,11 +636,15 @@ namespace DataLibrary.Database
 		
 		private string _Email;
 		
+		private string _PasswordOld;
+		
 		private string _Role;
 		
 		private bool _IsActive;
 		
 		private System.DateTime _CreateDate;
+		
+		private EntitySet<Article> _Articles;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -441,6 +660,8 @@ namespace DataLibrary.Database
     partial void OnFullNameChanged();
     partial void OnEmailChanging(string value);
     partial void OnEmailChanged();
+    partial void OnPasswordOldChanging(string value);
+    partial void OnPasswordOldChanged();
     partial void OnRoleChanging(string value);
     partial void OnRoleChanged();
     partial void OnIsActiveChanging(bool value);
@@ -451,6 +672,7 @@ namespace DataLibrary.Database
 		
 		public User()
 		{
+			this._Articles = new EntitySet<Article>(new Action<Article>(this.attach_Articles), new Action<Article>(this.detach_Articles));
 			OnCreated();
 		}
 		
@@ -554,6 +776,26 @@ namespace DataLibrary.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PasswordOld", DbType="NVarChar(50)")]
+		public string PasswordOld
+		{
+			get
+			{
+				return this._PasswordOld;
+			}
+			set
+			{
+				if ((this._PasswordOld != value))
+				{
+					this.OnPasswordOldChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordOld = value;
+					this.SendPropertyChanged("PasswordOld");
+					this.OnPasswordOldChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="NVarChar(50)")]
 		public string Role
 		{
@@ -614,6 +856,19 @@ namespace DataLibrary.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Article", Storage="_Articles", ThisKey="ID", OtherKey="AuthorID")]
+		public EntitySet<Article> Articles
+		{
+			get
+			{
+				return this._Articles;
+			}
+			set
+			{
+				this._Articles.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -633,6 +888,18 @@ namespace DataLibrary.Database
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_Articles(Article entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Articles(Article entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Company")]
@@ -645,7 +912,7 @@ namespace DataLibrary.Database
 		
 		private string _CompanyName;
 		
-		private System.Nullable<int> _Phone;
+		private string _Phone;
 		
 		private string _Logo;
 		
@@ -657,7 +924,7 @@ namespace DataLibrary.Database
 		
 		private string _Description;
 		
-		private System.Nullable<int> _Hotline;
+		private string _Hotline;
 		
 		private string _Zalo;
 		
@@ -683,7 +950,7 @@ namespace DataLibrary.Database
     partial void OnIDChanged();
     partial void OnCompanyNameChanging(string value);
     partial void OnCompanyNameChanged();
-    partial void OnPhoneChanging(System.Nullable<int> value);
+    partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
     partial void OnLogoChanging(string value);
     partial void OnLogoChanged();
@@ -695,7 +962,7 @@ namespace DataLibrary.Database
     partial void OnEmailChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void OnHotlineChanging(System.Nullable<int> value);
+    partial void OnHotlineChanging(string value);
     partial void OnHotlineChanged();
     partial void OnZaloChanging(string value);
     partial void OnZaloChanged();
@@ -760,8 +1027,8 @@ namespace DataLibrary.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="Int")]
-		public System.Nullable<int> Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(300)")]
+		public string Phone
 		{
 			get
 			{
@@ -840,7 +1107,7 @@ namespace DataLibrary.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(300)")]
 		public string Email
 		{
 			get
@@ -860,7 +1127,7 @@ namespace DataLibrary.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500)")]
 		public string Description
 		{
 			get
@@ -880,8 +1147,8 @@ namespace DataLibrary.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hotline", DbType="Int")]
-		public System.Nullable<int> Hotline
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hotline", DbType="NVarChar(300)")]
+		public string Hotline
 		{
 			get
 			{
@@ -1040,7 +1307,7 @@ namespace DataLibrary.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Copyright", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Copyright", DbType="NVarChar(300)")]
 		public string Copyright
 		{
 			get
@@ -1507,6 +1774,8 @@ namespace DataLibrary.Database
 		
 		private string _Alias;
 		
+		private string _Link;
+		
 		private int _Location;
 		
 		private int _Level;
@@ -1525,6 +1794,8 @@ namespace DataLibrary.Database
 		
 		private bool _IsMenu;
 		
+		private EntitySet<Article> _Articles;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1537,6 +1808,8 @@ namespace DataLibrary.Database
     partial void OnNameMenuChanged();
     partial void OnAliasChanging(string value);
     partial void OnAliasChanged();
+    partial void OnLinkChanging(string value);
+    partial void OnLinkChanged();
     partial void OnLocationChanging(int value);
     partial void OnLocationChanged();
     partial void OnLevelChanging(int value);
@@ -1559,6 +1832,7 @@ namespace DataLibrary.Database
 		
 		public Menu()
 		{
+			this._Articles = new EntitySet<Article>(new Action<Article>(this.attach_Articles), new Action<Article>(this.detach_Articles));
 			OnCreated();
 		}
 		
@@ -1638,6 +1912,26 @@ namespace DataLibrary.Database
 					this._Alias = value;
 					this.SendPropertyChanged("Alias");
 					this.OnAliasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="NVarChar(MAX)")]
+		public string Link
+		{
+			get
+			{
+				return this._Link;
+			}
+			set
+			{
+				if ((this._Link != value))
+				{
+					this.OnLinkChanging(value);
+					this.SendPropertyChanging();
+					this._Link = value;
+					this.SendPropertyChanged("Link");
+					this.OnLinkChanged();
 				}
 			}
 		}
@@ -1818,6 +2112,237 @@ namespace DataLibrary.Database
 					this._IsMenu = value;
 					this.SendPropertyChanged("IsMenu");
 					this.OnIsMenuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Menu_Article", Storage="_Articles", ThisKey="ID", OtherKey="MenuID")]
+		public EntitySet<Article> Articles
+		{
+			get
+			{
+				return this._Articles;
+			}
+			set
+			{
+				this._Articles.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Articles(Article entity)
+		{
+			this.SendPropertyChanging();
+			entity.Menu = this;
+		}
+		
+		private void detach_Articles(Article entity)
+		{
+			this.SendPropertyChanging();
+			entity.Menu = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SendEmail")]
+	public partial class SendEmail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Title;
+		
+		private int _Type;
+		
+		private string _Content;
+		
+		private string _ContentDefault;
+		
+		private string _Success;
+		
+		private string _Error;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnTypeChanging(int value);
+    partial void OnTypeChanged();
+    partial void OnContentChanging(string value);
+    partial void OnContentChanged();
+    partial void OnContentDefaultChanging(string value);
+    partial void OnContentDefaultChanged();
+    partial void OnSuccessChanging(string value);
+    partial void OnSuccessChanged();
+    partial void OnErrorChanging(string value);
+    partial void OnErrorChanged();
+    #endregion
+		
+		public SendEmail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int NOT NULL")]
+		public int Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Content", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Content
+		{
+			get
+			{
+				return this._Content;
+			}
+			set
+			{
+				if ((this._Content != value))
+				{
+					this.OnContentChanging(value);
+					this.SendPropertyChanging();
+					this._Content = value;
+					this.SendPropertyChanged("Content");
+					this.OnContentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContentDefault", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ContentDefault
+		{
+			get
+			{
+				return this._ContentDefault;
+			}
+			set
+			{
+				if ((this._ContentDefault != value))
+				{
+					this.OnContentDefaultChanging(value);
+					this.SendPropertyChanging();
+					this._ContentDefault = value;
+					this.SendPropertyChanged("ContentDefault");
+					this.OnContentDefaultChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Success", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Success
+		{
+			get
+			{
+				return this._Success;
+			}
+			set
+			{
+				if ((this._Success != value))
+				{
+					this.OnSuccessChanging(value);
+					this.SendPropertyChanging();
+					this._Success = value;
+					this.SendPropertyChanged("Success");
+					this.OnSuccessChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Error", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Error
+		{
+			get
+			{
+				return this._Error;
+			}
+			set
+			{
+				if ((this._Error != value))
+				{
+					this.OnErrorChanging(value);
+					this.SendPropertyChanging();
+					this._Error = value;
+					this.SendPropertyChanged("Error");
+					this.OnErrorChanged();
 				}
 			}
 		}

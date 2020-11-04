@@ -1,0 +1,127 @@
+﻿@model  DataLibrary.Database.Contact
+
+@{
+    ViewBag.Title = "Quản lý liên hệ";
+
+    Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section styles
+{
+
+    <!-- DataTables -->
+    @*<link rel="stylesheet" href="~/Assets/Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.css">*@
+    <link href="~/Scripts/jquery-ui-1.11.0/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/metro/lightgray/jtable.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jtable/themes/jqueryui/jtable_jqueryui.css" rel="stylesheet" />
+
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-edit"></i>
+                    Quản lý liên hệ
+                </h3>
+            </div>
+            <div class="card-body pad table-responsive">
+                <div id="jtable-main-container"></div>
+
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+    <!-- /.col -->
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#jtable-main-container').jtable({
+                title: '@ViewBag.Title',
+                paging: true, //Enable paging
+                pageSize: 20, //Set page size (default: 10)
+                sorting: true, //Enable sorting
+                defaultSorting: 'Name ASC', //Set default sorting
+                selecting: true, //Enable selecting
+                multiselect: true, //Allow multiple selecting
+                selectingCheckboxes: true, //Show checkboxes on first column
+                columnResizable: true, //Actually, no need to set true since it's default
+                columnSelectable: true, //Actually, no need to set true since it's default
+                saveUserPreferences: true, //Actually, no need to set true since it's default
+
+                actions: {
+                    listAction: '@Url.Action("List", "Contact")',
+                    deleteAction: '@Url.Action("Delete", "Contact")',
+                },
+                fields: {
+                    ID: {
+                        key: true,
+                        create: false,
+                        edit: false,
+                        list: false
+                    },
+                    FirstName: {
+                        title: 'First Name',
+                        width: '10%',
+                        display: function (data) {
+                            return '<a href="/admin/Contact/Detail/' + data.record.ID + '">' + data.record.FirstName + '</a>';
+                        }
+                    },
+                    LastName: {
+                        title: 'Last Name',
+                        width: '10%',
+                        display: function (data) {
+                            return '<a href="/admin/Contact/Detail/' + data.record.ID + '">' + data.record.LastName + '</a>';
+                        }
+                    },
+                    Email: {
+                        title: 'Địa chỉ email',
+                        width: '10%'
+                    },
+                    Phone: {
+                        title: 'Số điện thoại',
+                        width: '10%'
+                    },
+ 
+                    CreateDate: {
+                        title: 'Ngày gửi liên hệ',
+                        width: '10%'
+                    },
+                    '':
+                        {
+                            title: '',
+                            width: '2%',
+                            sorting: false,
+                            display: function (data) {
+                                return '<button title="Edit" type="button" class="jtable-command-button jtable-edit-command-button" onclick="detailRecord(' + data.record.ID + ')"><span>Edit</span></button>';
+                            }
+                        },
+                },
+
+            });
+            $('#jtable-main-container').jtable('load');
+        });
+    </script>
+
+
+    <script>
+
+    function detailRecord(Id) {
+        window.location = '@Url.Action("Detail","Contact")' + '/' + Id;
+    }
+
+    </script>
+    <script>
+        function editRecord(advId) {
+            window.location = '@Url.Action("Update","Article")' + '/' + advId;
+        }
+    </script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.js"></script>
+    <script src="~/Scripts/jtable/jquery.jtable.js"></script>
+
+
+}

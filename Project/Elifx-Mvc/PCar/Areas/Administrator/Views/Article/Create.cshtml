@@ -2,7 +2,7 @@
 @using DataLibrary.Config
 @model  PCar.Models.ArticleDto
   @{
-    ViewBag.Title = "Tạo mới bài viết ";
+      ViewBag.Title = "Tạo mới bài viết ";
       Layout = "~/Areas/Administrator/Views/Shared/_LayoutAdmin.cshtml";
 
  
@@ -87,9 +87,7 @@
                         </div>
                     </div>
                 </div>
-
-             
-
+                 
                 <div class="row">
                     <div class="col-sm-6">
                         <!-- select -->
@@ -99,26 +97,26 @@
                                 <label for="Status" class="custom-control-label">Trạng thái hiển thị</label>
                             </div>
 
-                            <div class="custom-control custom-checkbox">
+                            @*<div class="custom-control custom-checkbox">
                                 @Html.CheckBoxFor(c => c.Home, new { @class = "custom-control-input"  })
                                  <label for="Home" class="custom-control-label">Hiển thị trang chủ</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
+                            </div>*@
+                            @*<div class="custom-control custom-checkbox">
                                 @Html.CheckBoxFor(c => c.About, new { @class = "custom-control-input" })
                                 <label for="About" class="custom-control-label">Bài viết giới thiệu</label>
-                            </div>
+                            </div>*@
                             <div class="custom-control custom-checkbox">
-                                @Html.CheckBoxFor(c => c.Hot, new { @class = "custom-control-input" })
-                                <label for="Hot" class="custom-control-label">Bài viết nổi bật</label>
+                                @Html.CheckBoxFor(c => c.Home, new { @class = "custom-control-input" })
+                                <label for="Home" class="custom-control-label">Bài viết nổi bật</label>
                             </div>
-                            <div class="custom-control custom-checkbox">
+                            @*<div class="custom-control custom-checkbox">
                                 @Html.CheckBoxFor(c => c.New, new { @class = "custom-control-input" })
                                 <label for="New" class="custom-control-label">Bài viết mới</label>
                             </div>
                             <div class="custom-control custom-checkbox">
                                 @Html.CheckBoxFor(c => c.Customer, new { @class = "custom-control-input" })
                                 <label for="Customer" class="custom-control-label">Bài viết khách hàng</label>
-                            </div>
+                            </div>*@
 
                         </div>
                     </div>

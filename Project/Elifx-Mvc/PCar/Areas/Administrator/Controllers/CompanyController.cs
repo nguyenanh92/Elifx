@@ -33,7 +33,9 @@ namespace PCar.Areas.Administrator.Controllers
                         a.Image,
                         a.Email,
                         a.Hotline,
-                        a.Address
+                        a.Phone,
+                        a.Address,
+                        a.MetaTitle
                     }).ToList();
                     //Return result to jTable
                     return Json(new { Result = "OK", Records = list, TotalRecordCount = list.Count() });
@@ -76,10 +78,10 @@ namespace PCar.Areas.Administrator.Controllers
                     {
                         var hotel = new Company()
                         {
-                            CompanyName = model.Name,
+                            CompanyName = model.CompanyName,
                             Logo = model.Logo,
                             Image = model.Image,
-                            Phone = model.Tel,
+                            Phone = model.Phone,
                             Description = model.Description,
                             Email = model.Email,
                             Address = model.Address,
@@ -124,17 +126,19 @@ namespace PCar.Areas.Administrator.Controllers
 
                 var eHotel = new CompanyViewModel
                 {
-                    Name = hotel.CompanyName,
+                    CompanyName = hotel.CompanyName,
                     Logo = hotel.Logo,
                     Hotline = hotel.Hotline,
                     Image = hotel.Image,
-                    Tel = hotel.Phone,
+                    Phone = hotel.Phone,
                     Email = hotel.Email,
                     Address = hotel.Address,
                     Website = hotel.Website,
+                    zalo = hotel.Zalo,
                     FaceBook = hotel.Facebook,
                     Instagram = hotel.Instagram,
                     Youtube = hotel.Youtube,
+                    CopyRight = hotel.Copyright,
                     MetaTitle = hotel.MetaTitle,
                     MetaDescription = hotel.MetaDescription
                 };
@@ -153,10 +157,10 @@ namespace PCar.Areas.Administrator.Controllers
                         Company hotel = db.Companies.FirstOrDefault(b => b.ID == model.ID);
                         if (hotel != null)
                         {
-                            hotel.CompanyName = model.Name;
+                            hotel.CompanyName = model.CompanyName;
                             hotel.Logo = model.Logo;
                             hotel.Image = model.Image;
-                            hotel.Phone = model.Tel;
+                            hotel.Phone = model.Phone;
                             hotel.Hotline = model.Hotline;
                             hotel.Email = model.Email;
                             hotel.Address = model.Address;
@@ -164,6 +168,7 @@ namespace PCar.Areas.Administrator.Controllers
                             hotel.Facebook = model.FaceBook;
                             hotel.Instagram = model.Instagram;
                             hotel.Youtube = model.Youtube;
+                            hotel.Zalo = model.zalo;
                             hotel.Copyright = model.CopyRight;
                             hotel.MetaTitle = model.MetaTitle;
                             hotel.MetaDescription = model.MetaDescription;

@@ -213,6 +213,7 @@ namespace PCar.Areas.Administrator.Controllers
                         Type = menu.TypeMenu,
                         Description = menu.Description,
                         Title = menu.NameMenu,
+                        IsMenu = menu.IsMenu,
 
                     };
                     ListData();
@@ -276,6 +277,7 @@ namespace PCar.Areas.Administrator.Controllers
                         edit.MetaDescription =  model.MetaDescription;
                         edit.Description = model.Description;
                         edit.NameMenu = model.Title;
+                        edit.IsMenu = model.IsMenu;
 
 
                         db.SubmitChanges();

@@ -16,6 +16,7 @@ namespace DataLibrary.Database
     {
         [NotMapped]
         public string MenuAlias { get; set; }
+        public string Author { get; set; }
      }
 
 }

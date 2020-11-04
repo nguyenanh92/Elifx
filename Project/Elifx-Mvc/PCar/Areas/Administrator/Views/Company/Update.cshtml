@@ -35,10 +35,10 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            @Html.LabelFor(c => c.Name)
+                            @Html.LabelFor(c => c.CompanyName)
 
-                            @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(c => c.Name)
+                            @Html.TextBoxFor(c => c.CompanyName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.CompanyName)
                         </div>
 
                     </div>
@@ -86,10 +86,10 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(c => c.Tel)
+                            @Html.LabelFor(c => c.Phone)
 
-                            @Html.TextBoxFor(c => c.Tel, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(c => c.Tel)
+                            @Html.TextBoxFor(c => c.Phone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Phone)
                         </div>
                         
                         <div class="form-group">
@@ -140,12 +140,12 @@
                             @Html.ValidationMessageFor(c => c.FaceBook)
                         </div>
 
-                        <div class="form-group">
+                        @*<div class="form-group">
                             @Html.LabelFor(c => c.Twitter)
 
                             @Html.TextBoxFor(c => c.Twitter, new { @class = "form-control" })
                             @Html.ValidationMessageFor(c => c.Twitter)
-                        </div>
+                        </div>*@
 
                         <div class="form-group">
                             @Html.LabelFor(c => c.Youtube)
@@ -153,14 +153,6 @@
                             @Html.TextBoxFor(c => c.Youtube, new { @class = "form-control" })
                             @Html.ValidationMessageFor(c => c.Youtube)
                         </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(c => c.FaceBook)
-
-                            @Html.TextBoxFor(c => c.FaceBook, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(c => c.FaceBook)
-                        </div>
-
                         <div class="form-group">
                             @Html.LabelFor(c => c.Instagram)
 
@@ -168,12 +160,17 @@
                             @Html.ValidationMessageFor(c => c.Instagram)
                         </div>
 
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.zalo)
+
+                            @Html.TextBoxFor(c => c.zalo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.zalo)
+                        </div>
+
+                       
+
                     </div>
-                </div>
-
-
-
-
+                </div> 
                 <br />
 
                 <div class="card-footer">

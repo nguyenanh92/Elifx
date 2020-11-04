@@ -7,5 +7,6 @@ namespace PCar.Models
     {
         public Article Article { get; set; }
         public List<Article> Articles { get; set; }
+        public string Author { get; set; }
     }
 }
